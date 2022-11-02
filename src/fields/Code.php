@@ -48,17 +48,17 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var int The font size to use for the Code Editor field
      */
-    public $fontSize;
+    public $fontSize = 13;
 
     /**
      * @var bool Whether line numbers should be displayed in the Code Editor field
      */
-    public $lineNumbers;
+    public $lineNumbers = false;
 
     /**
      * @var bool Whether code folding should be used in the Code Editor field
      */
-    public $codeFolding;
+    public $codeFolding = false;
 
     /**
      * @var string The text that will be shown if the code field is empty.
@@ -106,36 +106,6 @@ class Code extends Field implements PreviewableFieldInterface
 
     // Public Methods
     // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        $rules = parent::rules();
-        $rules = array_merge($rules, [
-            ['theme', 'in', 'range' => ['vs', 'vs-dark', 'hc-black']],
-            ['theme', 'default', 'value' => 'vs'],
-            ['language', 'string'],
-            ['language', 'default', 'value' => 'javascript'],
-            [['singleLineEditor', 'showLanguageDropdown', 'lineNumbers', 'codeFolding'], 'boolean'],
-            ['placeholder', 'string'],
-            ['placeholder', 'default', 'value' => ''],
-            ['fontSize', 'integer'],
-            ['fontSize', 'default', 'value' => 13],
-            ['availableLanguages', ArrayValidator::class],
-            ['monacoEditorOptions', JsonValidator::class],
-        ]);
-        return $rules;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getContentColumnType(): string
-    {
-        return Schema::TYPE_TEXT;
-    }
 
     /**
      * @inheritdoc
@@ -201,7 +171,10 @@ class Code extends Field implements PreviewableFieldInterface
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));
         }
-
+        $monacoOptionsOverride = Json::decodeIfJson($this->monacoEditorOptions);
+        if ($monacoOptionsOverride === null || is_string($monacoOptionsOverride)) {
+            $monacoOptionsOverride = [];
+        }
         // Render the input template
         return Craft::$app->getView()->renderTemplate(
             'codefield/_components/fields/Code_input',
@@ -213,7 +186,39 @@ class Code extends Field implements PreviewableFieldInterface
                 'id' => $id,
                 'namespacedId' => $namespacedId,
                 'displayLanguages' => $displayLanguages,
+                'monacoOptionsOverride' => $monacoOptionsOverride,
             ]
         );
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function rules()
+    {
+        $rules = parent::rules();
+        $rules = array_merge($rules, [
+            ['theme', 'in', 'range' => ['vs', 'vs-dark', 'hc-black']],
+            ['theme', 'default', 'value' => 'vs'],
+            ['language', 'string'],
+            ['language', 'default', 'value' => 'javascript'],
+            [['singleLineEditor', 'showLanguageDropdown', 'lineNumbers', 'codeFolding'], 'boolean'],
+            ['placeholder', 'string'],
+            ['placeholder', 'default', 'value' => ''],
+            ['fontSize', 'integer'],
+            ['fontSize', 'default', 'value' => 13],
+            ['availableLanguages', ArrayValidator::class],
+            ['monacoEditorOptions', JsonValidator::class],
+        ]);
+        return $rules;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentColumnType(): string
+    {
+        return Schema::TYPE_TEXT;
+    }
+
 }

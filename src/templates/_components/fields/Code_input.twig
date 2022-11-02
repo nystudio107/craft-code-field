@@ -26,10 +26,27 @@
     orientation: orientation ?? null,
 } %}
 
+{# Monaco Editor options #}
 {% set monacoOptions = {
     theme: field.theme,
     language: field.language,
+    fontSize: field.fontSize,
 } %}
+{% if not field.singleLineEditor %}
+    {% if field.lineNumbers %}
+        {% set monacoOptions = monacoOptions | merge({
+            lineNumbers: 'on',
+            lineDecorationsWidth: 6,
+        }) %}
+    {% endif %}
+    {% if field.codeFolding %}
+        {% set monacoOptions = monacoOptions | merge({
+            folding: true,
+        }) %}
+    {% endif %}
+{% endif %}
+{% set monacoOptions = monacoOptions | merge(monacoOptionsOverride) %}
+{# Code Editor options #}
 {% set codeEditorOptions = {
     wrapperClass: "monaco-editor-background-frame",
     singleLineEditor: field.singleLineEditor,
