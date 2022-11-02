@@ -17,12 +17,13 @@ use craft\base\PreviewableFieldInterface;
 use craft\helpers\Json;
 use craft\validators\ArrayValidator;
 use nystudio107\codefield\assetbundles\codefield\CodeFieldAsset;
+use nystudio107\codefield\validators\JsonValidator;
 use yii\db\Schema;
 
 /**
  * @author    nystudio107
  * @package   CodeField
- * @since     1.0.0
+ * @since     3.0.0
  */
 class Code extends Field implements PreviewableFieldInterface
 {
@@ -43,6 +44,21 @@ class Code extends Field implements PreviewableFieldInterface
      * @var bool Whether the Code Editor field display as a single line
      */
     public $singleLineEditor = false;
+
+    /**
+     * @var int The font size to use for the Code Editor field
+     */
+    public $fontSize;
+
+    /**
+     * @var bool Whether line numbers should be displayed in the Code Editor field
+     */
+    public $lineNumbers;
+
+    /**
+     * @var bool Whether code folding should be used in the Code Editor field
+     */
+    public $codeFolding;
 
     /**
      * @var string The text that will be shown if the code field is empty.
@@ -72,6 +88,11 @@ class Code extends Field implements PreviewableFieldInterface
         'yaml',
     ];
 
+    /**
+     * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings
+     */
+    public $monacoEditorOptions = '';
+
     // Static Methods
     // =========================================================================
 
@@ -93,15 +114,17 @@ class Code extends Field implements PreviewableFieldInterface
     {
         $rules = parent::rules();
         $rules = array_merge($rules, [
-            ['theme', 'string'],
+            ['theme', 'in', 'range' => ['vs', 'vs-dark', 'hc-black']],
             ['theme', 'default', 'value' => 'vs'],
             ['language', 'string'],
             ['language', 'default', 'value' => 'javascript'],
-            ['singleLineEditor', 'boolean'],
+            [['singleLineEditor', 'showLanguageDropdown', 'lineNumbers', 'codeFolding'], 'boolean'],
             ['placeholder', 'string'],
             ['placeholder', 'default', 'value' => ''],
-            ['showLanguageDropdown', 'boolean'],
-            ['availableLanguages', ArrayValidator::class]
+            ['fontSize', 'integer'],
+            ['fontSize', 'default', 'value' => 13],
+            ['availableLanguages', ArrayValidator::class],
+            ['monacoEditorOptions', JsonValidator::class],
         ]);
         return $rules;
     }
