@@ -37,5 +37,5 @@ return [
     'Twig Filter' => 'Twig Filter',
     'Visual Studio Light' => 'Visual Studio Light',
     'Single Line Code Field' => 'Single Line Code Field',
-    'Show Language Dropdown' => 'Show Language Dropdown'
+    'Show Language Dropdown with Field' => 'Show Language Dropdown with Field'
 ];
