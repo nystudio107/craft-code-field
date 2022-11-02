@@ -16,7 +16,6 @@ use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
 use craft\helpers\Json;
 use craft\validators\ArrayValidator;
-use nystudio107\codefield\assetbundles\codefield\CodeFieldAsset;
 use nystudio107\codefield\validators\JsonValidator;
 use yii\db\Schema;
 
@@ -144,22 +143,9 @@ class Code extends Field implements PreviewableFieldInterface
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
-        // Register our asset bundle
-        Craft::$app->getView()->registerAssetBundle(CodeFieldAsset::class);
-
         // Get our id and namespace
         $id = Craft::$app->getView()->formatInputId($this->handle);
         $namespacedId = Craft::$app->getView()->namespaceInputId($id);
-
-        // Variables to pass down to our field JavaScript to let it namespace properly
-        $jsonVars = [
-            'id' => $id,
-            'name' => $this->handle,
-            'namespace' => $namespacedId,
-            'prefix' => Craft::$app->getView()->namespaceInputId(''),
-        ];
-        $jsonVars = Json::encode($jsonVars);
-        Craft::$app->getView()->registerJs("$('#{$namespacedId}-field').CodeFieldCode(" . $jsonVars . ");");
 
         // Extract just the languages that have been selected for display
         $displayLanguages = [];
