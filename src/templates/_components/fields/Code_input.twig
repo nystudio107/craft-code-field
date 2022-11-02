@@ -21,7 +21,7 @@
         describedBy: field.describedBy,
         name: name,
         value: value,
-        placeholder: field.placeholder ?? '',
+        placeholder: field.placeholder ?? "",
         required: field.required,
         orientation: orientation ?? null,
 } %}
@@ -38,4 +38,13 @@
         {{ codeEditor.textField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
 {% else %}
         {{ codeEditor.textareaField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
+{% endif %}
+
+{% if displayLanguages | length %}
+        {{ forms.selectField({
+                id: config.id ~ "-language-switcher",
+                label: "Language"|t("codefield"),
+                value: field.language,
+                options: displayLanguages,
+        }) }}
 {% endif %}

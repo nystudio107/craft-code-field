@@ -17,7 +17,6 @@
 
 {% do view.registerAssetBundle("nystudio107\\codefield\\assetbundles\\codefield\\CodeFieldAsset") %}
 
-<h1>Hello, world</h1>
 {{ forms.selectField({
     label: "Code Field Theme"|t("codefield"),
     instructions: "The theme to use for the Code Editor field."|t("codefield"),
@@ -63,18 +62,18 @@
     label: "Show Language Dropdown"|t("codefield"),
     id: "showLanguageDropdown",
     name: "showLanguageDropdown",
-    value: field.showLanguageDropdown,
+    checked: field.showLanguageDropdown,
     toggle: "availableLanguagesListWrapper",
     errors: field.getErrors("showLanguageDropdown")
 }) }}
 
-<div id="availableLanguagesListWrapper" class="nested-fields{% if not false %} hidden{% endif %}">
+<div id="availableLanguagesListWrapper" class="nested-fields{% if not field.showLanguageDropdown %} hidden{% endif %}">
     {{ forms.checkboxSelectField({
         label: "Available Languages"|t("codefield"),
         instructions: "The languages that should be listed in the language selector dropdown menu."|t("codefield"),
         id: "availableLanguages",
         name: "availableLanguages",
-        value: field.availableLanguages,
+        values: field.availableLanguages,
         options: monacoLanguages,
         showAllOption: true,
         errors: field.getErrors("availableLanguages")

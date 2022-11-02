@@ -15,6 +15,7 @@ use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
 use craft\helpers\Json;
+use craft\validators\ArrayValidator;
 use nystudio107\codefield\assetbundles\codefield\CodeFieldAsset;
 use yii\db\Schema;
 
@@ -56,7 +57,20 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var array The languages that should be listed in the language selector dropdown menu.
      */
-    public $availableLanguages = [];
+    public $availableLanguages = [
+        'css',
+        'graphql',
+        'html',
+        'javascript',
+        'json',
+        'markdown',
+        'mysql',
+        'php',
+        'shell',
+        'twig',
+        'typescript',
+        'yaml',
+    ];
 
     // Static Methods
     // =========================================================================
@@ -87,6 +101,7 @@ class Code extends Field implements PreviewableFieldInterface
             ['placeholder', 'string'],
             ['placeholder', 'default', 'value' => ''],
             ['showLanguageDropdown', 'boolean'],
+            ['availableLanguages', ArrayValidator::class]
         ]);
         return $rules;
     }
@@ -153,6 +168,15 @@ class Code extends Field implements PreviewableFieldInterface
         $jsonVars = Json::encode($jsonVars);
         Craft::$app->getView()->registerJs("$('#{$namespacedId}-field').CodeFieldCode(" . $jsonVars . ");");
 
+        // Extract just the languages that have been selected for display
+        $displayLanguages = [];
+        if ($this->showLanguageDropdown) {
+            $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
+            $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
+            $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
+            $displayLanguages = array_map(function ($k, $v) { return ['value' => $k, 'label' => $v];}, array_keys($displayLanguages), array_values($displayLanguages));
+        }
+
         // Render the input template
         return Craft::$app->getView()->renderTemplate(
             'codefield/_components/fields/Code_input',
@@ -163,6 +187,7 @@ class Code extends Field implements PreviewableFieldInterface
                 'orientation' => $this->getOrientation($element),
                 'id' => $id,
                 'namespacedId' => $namespacedId,
+                'displayLanguages' => $displayLanguages,
             ]
         );
     }
