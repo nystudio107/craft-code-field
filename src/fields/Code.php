@@ -47,7 +47,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var int The font size to use for the Code Editor field
      */
-    public $fontSize = 13;
+    public $fontSize = 14;
 
     /**
      * @var bool Whether line numbers should be displayed in the Code Editor field
@@ -192,7 +192,7 @@ class Code extends Field implements PreviewableFieldInterface
             ['placeholder', 'string'],
             ['placeholder', 'default', 'value' => ''],
             ['fontSize', 'integer'],
-            ['fontSize', 'default', 'value' => 13],
+            ['fontSize', 'default', 'value' => 14],
             ['availableLanguages', ArrayValidator::class],
             ['monacoEditorOptions', JsonValidator::class],
         ]);
