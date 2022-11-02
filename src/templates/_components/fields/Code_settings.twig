@@ -136,7 +136,7 @@
 <div id="advanced" class="{% if not field.getErrors("monacoEditorOptions") %}hidden{% endif %}">
     {{ codeEditor.textAreaField({
         label: "Monaco Editor Settings Override"|t("codefield"),
-        instructions: "JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings."|t("codefield"),
+        instructions: "JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings."|t("codefield"),
         id: "monacoEditorOptions",
         name: "monacoEditorOptions",
         value: field.monacoEditorOptions,

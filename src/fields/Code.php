@@ -89,7 +89,7 @@ class Code extends Field implements PreviewableFieldInterface
     ];
 
     /**
-     * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings
+     * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings
      */
     public $monacoEditorOptions = '';
 
