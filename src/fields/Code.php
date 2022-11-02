@@ -42,7 +42,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var bool Whether the Code Editor field display as a single line
      */
-    public $singleLineField = false;
+    public $singleLineEditor = false;
 
     /**
      * @var string The text that will be shown if the code field is empty.
@@ -97,7 +97,7 @@ class Code extends Field implements PreviewableFieldInterface
             ['theme', 'default', 'value' => 'vs'],
             ['language', 'string'],
             ['language', 'default', 'value' => 'javascript'],
-            ['singleLineField', 'boolean'],
+            ['singleLineEditor', 'boolean'],
             ['placeholder', 'string'],
             ['placeholder', 'default', 'value' => ''],
             ['showLanguageDropdown', 'boolean'],
@@ -174,7 +174,9 @@ class Code extends Field implements PreviewableFieldInterface
             $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
             $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
             $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
-            $displayLanguages = array_map(function ($k, $v) { return ['value' => $k, 'label' => $v];}, array_keys($displayLanguages), array_values($displayLanguages));
+            $displayLanguages = array_map(function ($k, $v) {
+                return ['value' => $k, 'label' => $v];
+            }, array_keys($displayLanguages), array_values($displayLanguages));
         }
 
         // Render the input template
