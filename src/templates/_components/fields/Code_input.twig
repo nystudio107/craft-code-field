@@ -58,10 +58,20 @@
 {% endif %}
 
 {% if displayLanguages | length %}
+    {% set languageSwitcherId = config.id ~ "-language-switcher" %}
     {{ forms.selectField({
-        id: config.id ~ "-language-switcher",
+        id: languageSwitcherId,
         label: "Language"|t("codefield"),
         value: field.language,
         options: displayLanguages,
     }) }}
+    {% js %}
+    var elementId = '{{ config.id | namespaceInputId }}';
+    var switchId = '{{ languageSwitcherId | namespaceInputId }}';
+    $('#' + switchId).on('change', function () {
+      var language = $(this).val();
+      var editor = monacoEditorInstances[elementId];
+      setMonacoEditorLanguage(editor, language, elementId);
+    });
+    {% endjs %}
 {% endif %}
