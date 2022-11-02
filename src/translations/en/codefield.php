@@ -37,5 +37,13 @@ return [
     'Twig Filter' => 'Twig Filter',
     'Visual Studio Light' => 'Visual Studio Light',
     'Single Line Code Field' => 'Single Line Code Field',
-    'Show Language Dropdown with Field' => 'Show Language Dropdown with Field'
+    'Show Language Dropdown with Field' => 'Show Language Dropdown with Field',
+    'Font Size' => 'Font Size',
+    'Code Folding' => 'Code Folding',
+    'Advanced' => 'Advanced',
+    'Monaco Editor Settings Override' => 'Monaco Editor Settings Override',
+    'Line Numbers' => 'Line Numbers',
+    'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings.',
+    'The font size to use for the Code Editor field.' => 'The font size to use for the Code Editor field.',
+    'Show Language Dropdown' => 'Show Language Dropdown'
 ];
