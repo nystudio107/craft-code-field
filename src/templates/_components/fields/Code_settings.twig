@@ -1,0 +1,82 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Code Field plugin for Craft CMS
+ *
+ * Code Field Settings
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2022 nystudio107
+ * @link      https://nystudio107.com
+ * @package   CodeField
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("nystudio107\\codefield\\assetbundles\\codefield\\CodeFieldAsset") %}
+
+<h1>Hello, world</h1>
+{{ forms.selectField({
+    label: "Code Field Theme"|t("codefield"),
+    instructions: "The theme to use for the Code Editor field."|t("codefield"),
+    id: "theme",
+    name: "theme",
+    value: field.theme,
+    options: [
+        { value: "vs", label: "Visual Studio Light"|t("codefield") },
+        { value: "vs-dark", label: "Visual Studio Dark"|t("codefield") },
+        { value: "hc-black", label: "High Constrast Dark"|t("codefield") },
+    ],
+    errors: field.getErrors("theme")
+}) }}
+
+{{ forms.selectField({
+    label: "Code Field Default Language"|t("codefield"),
+    instructions: "The language to use for the Code Editor field."|t("codefield"),
+    id: "language",
+    name: "language",
+    value: field.language,
+    options: monacoLanguages,
+    errors: field.getErrors("language")
+}) }}
+
+{{ forms.checkboxField({
+    label: "Single Line Code Field"|t("codefield"),
+    id: "singleLineField",
+    name: "singleLineField",
+    checked: field.singleLineField,
+    errors: field.getErrors("singleLineField")
+}) }}
+
+{{ forms.textField({
+    label: "Placeholder Text"|t("codefield"),
+    instructions: "The text that will be shown if the code field is empty."|t("codefield"),
+    id: "placeholder",
+    name: "placeholder",
+    value: field.placeholder,
+    errors: field.getErrors("placeholder")
+}) }}
+
+{{ forms.checkboxField({
+    label: "Show Language Dropdown"|t("codefield"),
+    id: "showLanguageDropdown",
+    name: "showLanguageDropdown",
+    value: field.showLanguageDropdown,
+    toggle: "availableLanguagesListWrapper",
+    errors: field.getErrors("showLanguageDropdown")
+}) }}
+
+<div id="availableLanguagesListWrapper" class="nested-fields{% if not false %} hidden{% endif %}">
+    {{ forms.checkboxSelectField({
+        label: "Available Languages"|t("codefield"),
+        instructions: "The languages that should be listed in the language selector dropdown menu."|t("codefield"),
+        id: "availableLanguages",
+        name: "availableLanguages",
+        value: field.availableLanguages,
+        options: monacoLanguages,
+        showAllOption: true,
+        errors: field.getErrors("availableLanguages")
+    }) }}
+</div>

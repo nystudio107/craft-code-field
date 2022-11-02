@@ -1,0 +1,41 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Code Field plugin for Craft CMS
+ *
+ * Code Field Input
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2022 nystudio107
+ * @link      https://nystudio107.com
+ * @package   CodeField
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+{% import "codeeditor/codeEditor" as codeEditor %}
+
+{% set config = {
+        id: id ?? field.getInputId(),
+        describedBy: field.describedBy,
+        name: name,
+        value: value,
+        placeholder: field.placeholder ?? '',
+        required: field.required,
+        orientation: orientation ?? null,
+} %}
+
+{% set monacoOptions = {
+        theme: field.theme,
+        language: field.language,
+} %}
+{% set codeEditorOptions = {
+        wrapperClass: "monaco-editor-background-frame",
+        singleLineEditor: field.singleLineField,
+} %}
+{% if field.singleLineField %}
+        {{ codeEditor.textField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
+{% else %}
+        {{ codeEditor.textareaField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
+{% endif %}
