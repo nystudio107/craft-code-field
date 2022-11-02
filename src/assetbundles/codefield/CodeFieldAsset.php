@@ -10,14 +10,13 @@
 
 namespace nystudio107\codefield\assetbundles\codefield;
 
-use Craft;
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
 
 /**
  * @author    nystudio107
  * @package   CodeField
- * @since     1.0.0
+ * @since     3.0.0
  */
 class CodeFieldAsset extends AssetBundle
 {

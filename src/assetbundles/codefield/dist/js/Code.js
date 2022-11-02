@@ -7,7 +7,7 @@ s/**
  * @copyright Copyright (c) 2022 nystudio107
  * @link      https://nystudio107.com
  * @package   CodeField
- * @since     1.0.0CodeFieldCode
+ * @since     3.0.0CodeFieldCode
  */
 
 ;(function ($, window, document, undefined) {

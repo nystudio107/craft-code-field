@@ -25,7 +25,7 @@ use yii\base\Event;
  *
  * @author    nystudio107
  * @package   CodeField
- * @since     1.0.0
+ * @since     3.0.0
  *
  */
 class CodeField extends Plugin
