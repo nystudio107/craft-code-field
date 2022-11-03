@@ -86,5 +86,6 @@ Use the Code Field as you would any other Craft CMS field.
 Some things to do, and ideas for potential features:
 
 * Provide support for additional third-party themes
+* Add a setting to turn off the display of the language icon
 
 Brought to you by [nystudio107](https://nystudio107.com)
