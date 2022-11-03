@@ -84,23 +84,18 @@ Use the Code Field as you would any other Craft CMS field.
 To output the contents of the field on the frontend, simply do:
 
 ```twig
-{{ entry.someCode | raw }}
+{{ entry.someCode.value | raw }}
 ```
 
 If you need to know the language or other settings for the Code Field editor, you can get that as well:
 
 ```twig
-    {# Get a handle to the Code Field field #}
-    {% set codeField = craft.app.fields.getFieldByHandle('someCode') %}
-    {% if  codeField %}
-        {% set codeFieldLanguage = codeField.language %}
-        {# Do whatever you need to do for this language #}
-        {% if codeFieldLanguage == "javascript" %}
-            <p>This is JavaScript!</p>
-        {% endif %}
-        {# Output the code #}
-        <pre><code>{{ entry.someCode | raw }}</code></pre>
+    {# Do whatever you need to do for this language #}
+    {% if entry.someCode.language == "javascript" %}
+        <p>This is JavaScript!</p>
     {% endif %}
+    {# Output the code #}
+    <pre><code>{{ entry.someCode.value | raw }}</code></pre>
 ```
 
 This will not result in any formatting of syntax highlighting of the code on the frontend; that's up to you to do as you see fit.
