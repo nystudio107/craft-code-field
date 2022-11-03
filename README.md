@@ -79,7 +79,27 @@ Using this, you can control every aspect of the Code Field editor.
 
 ## Using Code Field
 
-Use the Code Field as you would any other Craft CMS field. 
+Use the Code Field as you would any other Craft CMS field.
+
+To output the contents of the field on the frontend, simply do:
+
+```twig
+{{ entry.myFieldHandle }}
+```
+
+This will not result in any formatting of syntax highlighting of the code on the frontend; that's up to you to do as you see fit.
+
+However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor) Twig macros directly to display the Code Field editor on the frontend.
+
+In order to do this, you need to enable the `allowFrontendAccess` option in `craft-code-editor`.
+
+The following `monacoOptions` allow you to make the field read-only (though the user can still interact with the code):
+```json
+{
+    "domReadOnly": true,
+    "readOnly": true
+}
+```
 
 ## Code Field Roadmap
 
