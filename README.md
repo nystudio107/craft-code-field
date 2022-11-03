@@ -89,7 +89,7 @@ To output the contents of the field on the frontend, simply do:
 
 This will not result in any formatting of syntax highlighting of the code on the frontend; that's up to you to do as you see fit.
 
-However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor) Twig macros directly to display the Code Field editor on the frontend.
+However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
 
 In order to do this, you need to enable the `allowFrontendAccess` option in `craft-code-editor`.
 
