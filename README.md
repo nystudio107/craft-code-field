@@ -101,6 +101,8 @@ The following `monacoOptions` allow you to make the field read-only (though the 
 }
 ```
 
+![Frontend Read Only](./resources/code-field-frontend-read-only.png)
+
 ## Code Field Roadmap
 
 Some things to do, and ideas for potential features:
