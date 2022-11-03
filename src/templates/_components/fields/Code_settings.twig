@@ -16,25 +16,23 @@
 {% import "_includes/forms" as forms %}
 {% import "codeeditor/codeEditor" as codeEditor %}
 
-{% do view.registerAssetBundle("nystudio107\\codefield\\assetbundles\\codefield\\CodeFieldAsset") %}
-
 {{ forms.selectField({
     label: "Code Field Theme"|t("codefield"),
-    instructions: "The theme to use for the Code Editor field."|t("codefield"),
+    instructions: "The theme to use for the Code Field editor."|t("codefield"),
     id: "theme",
     name: "theme",
     value: field.theme,
     options: [
         { value: "vs", label: "Visual Studio Light"|t("codefield") },
         { value: "vs-dark", label: "Visual Studio Dark"|t("codefield") },
-        { value: "hc-black", label: "High Constrast Dark"|t("codefield") },
+        { value: "hc-black", label: "High Contrast Dark"|t("codefield") },
     ],
     errors: field.getErrors("theme")
 }) }}
 
 {{ forms.selectField({
     label: "Code Field Default Language"|t("codefield"),
-    instructions: "The language to use for the Code Editor field."|t("codefield"),
+    instructions: "The language to use for the Code Field editor."|t("codefield"),
     id: "language",
     name: "language",
     value: field.language,
@@ -44,7 +42,7 @@
 
 {{ forms.selectField({
     label: "Font Size"|t("codefield"),
-    instructions: "The font size to use for the Code Editor field."|t("codefield"),
+    instructions: "The font size to use for the Code Field editor."|t("codefield"),
     id: "fontSize",
     name: "fontSize",
     value: field.fontSize,

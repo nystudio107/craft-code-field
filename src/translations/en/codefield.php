@@ -19,7 +19,7 @@ return [
     'Visual Studio Dark' => 'Visual Studio Dark',
     '{name} plugin loaded' => '{name} plugin loaded',
     'Code Field Theme' => 'Code Field Theme',
-    'High Constrast Dark' => 'High Constrast Dark',
+    'High Contrast Dark' => 'High Contrast Dark',
     'Code' => 'Code',
     'This is not valid JSON' => 'This is not valid JSON',
     'The theme to use for the Code Editor field.' => 'The theme to use for the Code Editor field.',
@@ -38,5 +38,11 @@ return [
     'Line Numbers' => 'Line Numbers',
     'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings.',
     'The font size to use for the Code Editor field.' => 'The font size to use for the Code Editor field.',
-    'Show Language Dropdown' => 'Show Language Dropdown'
+    'Show Language Dropdown' => 'Show Language Dropdown',
+    'The font size to use for the Code Field editor.' => 'The font size to use for the Code Field editor.',
+    'Whether the Code Editor field display as a single line.' => 'Whether the Code Editor field display as a single line.',
+    'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings.',
+    'Whether the language selector dropdown menu should be displayed.' => 'Whether the language selector dropdown menu should be displayed.',
+    'The language to use for the Code Field editor.' => 'The language to use for the Code Field editor.',
+    'The theme to use for the Code Field editor.' => 'The theme to use for the Code Field editor.'
 ];
