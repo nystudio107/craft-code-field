@@ -114,6 +114,12 @@ The following `monacoOptions` allow you to make the field read-only (though the 
 
 ![Frontend Read Only](./resources/code-field-frontend-read-only.png)
 
+If you are storing Twig code, you can actually render that on the frontend using [renderObjectTemplate](https://craftcms.com/docs/4.x/dev/functions.html#renderobjecttemplate) if you like:
+
+```twig
+{{ renderObjectTemplate(entry.someCode.value, entry) }}
+```
+
 ## Code Field Roadmap
 
 Some things to do, and ideas for potential features:
