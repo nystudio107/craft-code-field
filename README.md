@@ -124,6 +124,7 @@ If you are storing Twig code, you can actually render that on the frontend using
 
 Some things to do, and ideas for potential features:
 
+* Add a default value for the field in Field Settings
 * Provide support for additional third-party themes
 * Add a setting to turn off the display of the language icon
 
