@@ -1,3 +1,8 @@
+---
+title: Vite plugin for Craft CMS
+
+description: Documentation for the Code Editor plugin. The Vite plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
+---
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/develop-v3) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=develop-v3)](https://scrutinizer-ci.com/code-intelligence)
 
 # Code Field plugin for Craft CMS
@@ -30,11 +35,11 @@ Code Field uses the [Monaco editor](https://microsoft.github.io/monaco-editor/) 
 
 That means it provides code highlighting, syntax checking, and autocompletion for over 80 languages.
 
-![JavaScript](./resources/code-field-javascript-autocomplete.png)
+![JavaScript](./resources/screenshots/code-field-javascript-autocomplete.png)
 
 It also has light, dark, and high contrast themes that can be chosen on a per-field basis.
 
-![CSS](./resources/code-field-css-picker.png)
+![CSS](./resources/screenshots/code-field-css-picker.png)
 
 It also sports as a variety of editor options such as font size, line numbers, code folding, and more.
 
@@ -46,7 +51,7 @@ Once the Code Editor plugin is installed, it provides a **Code** field type that
 
 You can configure each field with its own discrete settings:
 
-![Code Field Settings](./resources/code-field-settings.png)
+![Code Field Settings](./resources/screenshots/code-field-settings.png)
 
 * **Code Field Theme** - The theme to use for the Code Field editor. It can be either Visual Studio Light, Visual Studio Dark, or High Contrast Dark.
 * **Code Field Default Language** - The language to use for the Code Field editor. This can optionally be changed by content authors while using the field (see below)
@@ -61,7 +66,7 @@ You can configure each field with its own discrete settings:
 
 Clicking on **Available Languages** discloses a list of over 80 languages:
 
-![Markdown](./resources/code-field-languages.png)
+![Markdown](./resources/screenshots/code-field-languages.png)
 
 Check the languages that you want to appear in the **Language** dropdown menu that is optionally displayed under the Code Field editor when editing an entry.
 
@@ -71,7 +76,7 @@ This lets you limit the languages available to content authors to a subset of al
 
 Clicking on **Advanced** discloses a **Monaco Editor Settings Override** field:
 
-![Markdown](./resources/code-field-options-override.png)
+![Markdown](./resources/screenshots/code-field-options-override.png)
 
 This allows you to override any of the Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) settings via a JSON blob configuration.
 
@@ -112,7 +117,7 @@ The following `monacoOptions` allow you to make the field read-only (though the 
 }
 ```
 
-![Frontend Read Only](./resources/code-field-frontend-read-only.png)
+![Frontend Read Only](./resources/screenshots/code-field-frontend-read-only.png)
 
 If you are storing Twig code, you can actually render that on the frontend using [renderObjectTemplate](https://craftcms.com/docs/4.x/dev/functions.html#renderobjecttemplate) if you like:
 
