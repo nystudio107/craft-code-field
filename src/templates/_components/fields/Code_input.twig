@@ -1,4 +1,3 @@
-{# @var craft \craft\web\twig\variables\CraftVariable #}
 {#
 /**
  * Code Field plugin for Craft CMS
@@ -16,11 +15,12 @@
 {% import "_includes/forms" as forms %}
 {% import "codeeditor/codeEditor" as codeEditor %}
 
+{% set codeFieldId = id ?? field.getInputId() %}
 {% set config = {
-    id: id ?? field.getInputId(),
+    id: codeFieldId ~ "value",
+    name: name ~ "[value]",
     describedBy: field.describedBy,
-    name: name,
-    value: value,
+    value: value.value,
     placeholder: field.placeholder ?? "",
     required: field.required,
     orientation: orientation ?? null,
@@ -58,11 +58,12 @@
 {% endif %}
 
 {% if displayLanguages | length %}
-    {% set languageSwitcherId = config.id ~ "-language-switcher" %}
+    {% set languageSwitcherId = codeFieldId ~ "language" %}
     {{ forms.selectField({
         id: languageSwitcherId,
+        name: codeFieldId ~ "[language]",
         label: "Language"|t("codefield"),
-        value: field.language,
+        value: value.language,
         options: displayLanguages,
     }) }}
     {% js %}

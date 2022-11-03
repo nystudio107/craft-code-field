@@ -16,6 +16,7 @@ use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
 use craft\helpers\Json;
 use craft\validators\ArrayValidator;
+use nystudio107\codefield\models\CodeData;
 use nystudio107\codefield\validators\JsonValidator;
 use yii\db\Schema;
 
@@ -111,15 +112,41 @@ class Code extends Field implements PreviewableFieldInterface
      */
     public function normalizeValue($value, ElementInterface $element = null)
     {
-        return $value;
-    }
+        if ($value instanceof CodeData) {
+            return $value;
+        }
+        // Default config
+        $config = [
+            'value' => '',
+            'language' => $this->language,
+        ];
+        // Handle incoming values potentially being JSON or an array
+        if (!empty($value)) {
+            // Handle JSON-encoded values coming in
+            if (\is_string($value)) {
+                $jsonValue = Json::decodeIfJson($value);
+                // If this is still a string (meaning it's not valid JSON), treat it as the value
+                if (\is_string($jsonValue)) {
+                    $config['value'] = $jsonValue;
+                } else {
+                    $value = $jsonValue;
+                }
+            }
+            if (\is_array($value)) {
+                $config = array_merge($config, array_filter($value));
+            }
+        }
+        // Create and validate the model
+        $codeData = new CodeData($config);
+        if (!$codeData->validate()) {
+            Craft::error(
+                Craft::t('codefield', 'CodeData failed validation: ')
+                . print_r($codeData->getErrors(), true),
+                __METHOD__
+            );
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public function serializeValue($value, ElementInterface $element = null)
-    {
-        return parent::serializeValue($value, $element);
+        return $codeData;
     }
 
     /**
