@@ -206,5 +206,4 @@ class Code extends Field implements PreviewableFieldInterface
     {
         return Schema::TYPE_TEXT;
     }
-
 }

@@ -17,7 +17,6 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fields;
 use craft\services\Plugins;
 use nystudio107\codefield\fields\Code;
-use nystudio107\codefield\models\Settings;
 use yii\base\Event;
 
 /**
