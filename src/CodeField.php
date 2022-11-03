@@ -24,7 +24,7 @@ use yii\base\Event;
  *
  * @author    nystudio107
  * @package   CodeField
- * @since     3.0.0
+ * @since     4.0.0
  *
  */
 class CodeField extends Plugin
@@ -35,7 +35,7 @@ class CodeField extends Plugin
     /**
      * @var CodeField
      */
-    public static $plugin;
+    public static ?CodeField $plugin = null;
 
     // Public Properties
     // =========================================================================
@@ -43,17 +43,17 @@ class CodeField extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
     /**
      * @var bool
      */
-    public $hasCpSettings = false;
+    public bool $hasCpSettings = false;
 
     /**
      * @var bool
      */
-    public $hasCpSection = false;
+    public bool $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
@@ -69,7 +69,7 @@ class CodeField extends Plugin
         Event::on(
             Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES,
-            function (RegisterComponentTypesEvent $event) {
+            static function (RegisterComponentTypesEvent $event) {
                 $event->types[] = Code::class;
             }
         );

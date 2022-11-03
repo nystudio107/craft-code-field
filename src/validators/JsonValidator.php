@@ -19,7 +19,7 @@ use function is_string;
 /**
  * @author    nystudio107
  * @package   Code Field
- * @since     3.0.0
+ * @since     4.0.0
  */
 class JsonValidator extends Validator
 {

@@ -11,7 +11,7 @@
 /**
  * @author    nystudio107
  * @package   CodeField
- * @since     3.0.0
+ * @since     4.0.0
  */
 return [
     'The text that will be shown if the code field is empty.' => 'The text that will be shown if the code field is empty.',

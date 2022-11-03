@@ -14,6 +14,7 @@ use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
+use craft\helpers\Html;
 use craft\helpers\Json;
 use craft\validators\ArrayValidator;
 use nystudio107\codefield\validators\JsonValidator;
@@ -22,7 +23,7 @@ use yii\db\Schema;
 /**
  * @author    nystudio107
  * @package   CodeField
- * @since     3.0.0
+ * @since     4.0.0
  */
 class Code extends Field implements PreviewableFieldInterface
 {
@@ -32,47 +33,47 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var string The theme to use for the Code Editor field.
      */
-    public $theme = 'vs';
+    public string $theme = 'vs';
 
     /**
      * @var string The language to use for the Code Editor field.
      */
-    public $language = 'javascript';
+    public string $language = 'javascript';
 
     /**
      * @var bool Whether the Code Editor field display as a single line
      */
-    public $singleLineEditor = false;
+    public bool $singleLineEditor = false;
 
     /**
      * @var int The font size to use for the Code Editor field
      */
-    public $fontSize = 14;
+    public int $fontSize = 14;
 
     /**
      * @var bool Whether line numbers should be displayed in the Code Editor field
      */
-    public $lineNumbers = false;
+    public bool $lineNumbers = false;
 
     /**
      * @var bool Whether code folding should be used in the Code Editor field
      */
-    public $codeFolding = false;
+    public bool $codeFolding = false;
 
     /**
      * @var string The text that will be shown if the code field is empty.
      */
-    public $placeholder = '';
+    public string $placeholder = '';
 
     /**
      * @var bool Whether the language selector dropdown menu should be displayed.
      */
-    public $showLanguageDropdown = true;
+    public bool $showLanguageDropdown = true;
 
     /**
      * @var array The languages that should be listed in the language selector dropdown menu.
      */
-    public $availableLanguages = [
+    public array $availableLanguages = [
         'css',
         'graphql',
         'html',
@@ -90,7 +91,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings
      */
-    public $monacoEditorOptions = '';
+    public string $monacoEditorOptions = '';
 
     // Static Methods
     // =========================================================================
@@ -109,7 +110,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
-    public function normalizeValue($value, ElementInterface $element = null)
+    public function normalizeValue($value, ElementInterface $element = null): mixed
     {
         return $value;
     }
@@ -117,7 +118,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
-    public function serializeValue($value, ElementInterface $element = null)
+    public function serializeValue($value, ElementInterface $element = null): mixed
     {
         return parent::serializeValue($value, $element);
     }
@@ -125,7 +126,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
         // Render the settings template
@@ -144,7 +145,7 @@ class Code extends Field implements PreviewableFieldInterface
     public function getInputHtml($value, ElementInterface $element = null): string
     {
         // Get our id and namespace
-        $id = Craft::$app->getView()->formatInputId($this->handle);
+        $id = Html::id($this->handle);
         $namespacedId = Craft::$app->getView()->namespaceInputId($id);
 
         // Extract just the languages that have been selected for display
@@ -153,7 +154,7 @@ class Code extends Field implements PreviewableFieldInterface
             $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
             $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
             $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
-            $displayLanguages = array_map(function ($k, $v) {
+            $displayLanguages = array_map(static function ($k, $v) {
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));
         }
@@ -180,10 +181,10 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
-    public function rules()
+    public function rules(): array
     {
         $rules = parent::rules();
-        $rules = array_merge($rules, [
+        return array_merge($rules, [
             ['theme', 'in', 'range' => ['vs', 'vs-dark', 'hc-black']],
             ['theme', 'default', 'value' => 'vs'],
             ['language', 'string'],
@@ -196,7 +197,6 @@ class Code extends Field implements PreviewableFieldInterface
             ['availableLanguages', ArrayValidator::class],
             ['monacoEditorOptions', JsonValidator::class],
         ]);
-        return $rules;
     }
 
     /**
