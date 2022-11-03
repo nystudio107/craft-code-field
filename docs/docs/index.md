@@ -43,7 +43,7 @@ It also has light, dark, and high contrast themes that can be chosen on a per-fi
 
 It also sports as a variety of editor options such as font size, line numbers, code folding, and more.
 
-![Markdown](./resources/code-field-markdown.png)
+![Markdown](./resources/screenshots/code-field-markdown.png)
 
 ## Configuring Code Field
 
