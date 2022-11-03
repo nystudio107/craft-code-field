@@ -29,7 +29,7 @@
 {# Monaco Editor options #}
 {% set monacoOptions = {
     theme: field.theme,
-    language: field.language,
+    language: value.language,
     fontSize: field.fontSize,
 } %}
 {% if not field.singleLineEditor %}
