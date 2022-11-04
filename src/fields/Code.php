@@ -34,7 +34,7 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @var string The theme to use for the Code Editor field.
      */
-    public string $theme = 'vs';
+    public string $theme = 'auto';
 
     /**
      * @var string The language to use for the Code Editor field.
@@ -212,8 +212,8 @@ class Code extends Field implements PreviewableFieldInterface
     {
         $rules = parent::rules();
         return array_merge($rules, [
-            ['theme', 'in', 'range' => ['vs', 'vs-dark', 'hc-black']],
-            ['theme', 'default', 'value' => 'vs'],
+            ['theme', 'in', 'range' => ['auto', 'vs', 'vs-dark', 'hc-black']],
+            ['theme', 'default', 'value' => 'auto'],
             ['language', 'string'],
             ['language', 'default', 'value' => 'javascript'],
             [['singleLineEditor', 'showLanguageDropdown', 'lineNumbers', 'codeFolding'], 'boolean'],
