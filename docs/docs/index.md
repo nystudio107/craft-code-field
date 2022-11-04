@@ -1,7 +1,7 @@
 ---
-title: Code Editor plugin for Craft CMS
+title: Code Field plugin for Craft CMS
 
-description: Documentation for the Code Editor plugin.  The Code Editor plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
+description: Documentation for the Code Field plugin.  The Code Field plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
 ---
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/develop-v3) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=develop-v3)](https://scrutinizer-ci.com/code-intelligence)
 
