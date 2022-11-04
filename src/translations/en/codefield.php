@@ -44,5 +44,8 @@ return [
     'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/enums/monaco.editor.EditorOption.html) that will override the default settings.',
     'Whether the language selector dropdown menu should be displayed.' => 'Whether the language selector dropdown menu should be displayed.',
     'The language to use for the Code Field editor.' => 'The language to use for the Code Field editor.',
-    'The theme to use for the Code Field editor.' => 'The theme to use for the Code Field editor.'
+    'The theme to use for the Code Field editor.' => 'The theme to use for the Code Field editor.',
+    'Auto' => 'Auto',
+    'High Constrast Dark' => 'High Constrast Dark',
+    'CodeData failed validation: ' => 'CodeData failed validation: '
 ];
