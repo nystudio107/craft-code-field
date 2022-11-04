@@ -53,7 +53,7 @@ You can configure each field with its own discrete settings:
 
 ![Code Field Settings](./resources/screenshots/code-field-settings.png)
 
-* **Code Field Theme** - The theme to use for the Code Field editor. It can be either Visual Studio Light, Visual Studio Dark, or High Contrast Dark.
+* **Code Field Theme** - The theme to use for the Code Field editor. It can be either Auto, Visual Studio Light, Visual Studio Dark, or High Contrast Dark. **Auto** will set the light/dark theme based on browser light/dark mode. **N.B.:** The Monaco editor [allows only one theme per page](https://github.com/microsoft/monaco-editor/issues/338) so you can't have different editor instances using different themes.
 * **Code Field Default Language** - The language to use for the Code Field editor. This can optionally be changed by content authors while using the field (see below)
 * **Font Size** - The font size to use for the Code Field editor
 * **Single Line Code Field** - Whether the editor should behave like a Craft field that can be tabbed between, and displays as a single line, with no line breaks.
