@@ -24,6 +24,6 @@ To install the plugin, follow these instructions.
 
 ## Documentation
 
-Click here -> [Code Editor Documentation](https://nystudio107.com/plugins/code-field/documentation)
+Click here -> [Code Field Documentation](https://nystudio107.com/plugins/code-field/documentation)
 
 Brought to you by [nystudio107](http://nystudio107.com)
