@@ -82,6 +82,12 @@ This allows you to override any of the Monaco [EditorOptions](https://microsoft.
 
 Using this, you can control every aspect of the Code Field editor.
 
+## Converting Existing Fields
+
+You can convert existing Craft CMS [Plain Text](https://craftcms.com/docs/4.x/plain-text-fields.html) fields, [Code Mirror](https://plugins.craftcms.com/code-mirror) fields, [Simple Text](https://plugins.craftcms.com/simple-text) fields, or other text/code fields to Code Field fields just by changing the field type to **Code**.
+
+All of your existing content will be left intact after converting them over.
+
 ## Using Code Field
 
 Use the Code Field as you would any other Craft CMS field.
