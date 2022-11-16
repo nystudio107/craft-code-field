@@ -131,6 +131,49 @@ If you are storing Twig code, you can actually render that on the frontend using
 {{ renderObjectTemplate(entry.someCode.value, entry) }}
 ```
 
+## Advanced Usage
+
+### GraphQL
+
+Code Field supports GraphQL, here's an example query:
+
+```GraphQL
+{
+  entries(section: "blog", limit:1) {
+    ...on blog_blog_Entry {
+      title,
+      someCode {
+        language,
+        value
+      }
+    }
+  }
+}
+```
+
+In this example, `someCode` is the Code Field field handle. The schema supports the following parameters:
+
+* **`language`** - The language of the Code Field
+* **`value`** - The data entered into the Code Field
+
+Here's an example of the data returned from the above query:
+
+```json
+{
+   "data": {
+      "entries": [
+         {
+            "title": "My first blog",
+            "someCode": {
+               "language": "typescript",
+               "value": "function createQuote(quote, callback){ \r\n  var myQuote = \"Like I always say, \" + quote;\r\n  callback(myQuote); // 2\r\n}\r\n\r\nfunction logQuote(quote: string){\r\n  console.log(quote);\r\n}\r\n\r\ncreateQuote(\"eat your vegetables!\", logQuote); // 1"
+            }
+         }
+      ]
+   }
+}
+```
+
 ## Code Field Roadmap
 
 Some things to do, and ideas for potential features:
