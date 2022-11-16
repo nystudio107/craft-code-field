@@ -17,6 +17,8 @@ use craft\base\PreviewableFieldInterface;
 use craft\helpers\Html;
 use craft\helpers\Json;
 use craft\validators\ArrayValidator;
+use GraphQL\Type\Definition\Type;
+use nystudio107\codefield\gql\types\generators\CodeDataGenerator;
 use nystudio107\codefield\models\CodeData;
 use nystudio107\codefield\validators\JsonValidator;
 use yii\db\Schema;
@@ -203,6 +205,20 @@ class Code extends Field implements PreviewableFieldInterface
                 'monacoOptionsOverride' => $monacoOptionsOverride,
             ]
         );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentGqlType(): Type|array
+    {
+        $typeArray = CodeDataGenerator::generateTypes($this);
+
+        return [
+            'name' => $this->handle,
+            'description' => 'Code Editor field',
+            'type' => array_shift($typeArray),
+        ];
     }
 
     /**

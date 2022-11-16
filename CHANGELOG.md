@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.3 - 2022.11.16
+### Added
+* Added GraphQL support ([#2](https://github.com/nystudio107/craft-code-field/issues/2))
+
 ## 4.0.2 - 2022.11.04
 ### Added
 * Added **Auto** as the default theme setting, which automatically sets the theme to match the browser's dark mode setting
