@@ -1,5 +1,6 @@
 ---
 title: Code Field plugin for Craft CMS
+sidebar: false
 
 description: Documentation for the Code Field plugin.  The Code Field plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
 ---
