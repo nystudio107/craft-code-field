@@ -2,7 +2,7 @@ import Theme from 'vitepress/theme'
 import {h, watch} from 'vue'
 import './custom.css'
 
-import SidebarBottom from './SidebarBottom.vue';
+import NYSLogo from './NYSLogo.vue';
 
 // Could also come from .env
 const GA_ID = 'UA-69117511-1';
@@ -11,7 +11,7 @@ export default {
   ...Theme,
   Layout() {
     return h(Theme.Layout, null, {
-        'aside-bottom': () => h(SidebarBottom)
+        'aside-bottom': () => h(NYSLogo)
       }
     )
   },
