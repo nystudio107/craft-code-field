@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import SitemapPlugin from 'rollup-plugin-sitemap'
-import VitePressConfig from './.vitepress/config.js'
+import VitePressConfig from './.vitepress/config.ts'
 
 const docsSiteBaseUrl = 'https://nystudio107.com'
 const docsBaseUrl = new URL(VitePressConfig.base, docsSiteBaseUrl).href.replace(/\/$/, '') + '/'
