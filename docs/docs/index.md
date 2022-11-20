@@ -54,7 +54,7 @@ You can configure each field with its own discrete settings:
 
 ![Code Field Settings](./resources/screenshots/code-field-settings.png)
 
-* **Code Field Theme** - The theme to use for the Code Field editor. It can be either Auto, Visual Studio Light, Visual Studio Dark, or High Contrast Dark. **Auto** will set the light/dark theme based on browser light/dark mode. **N.B.:** The Monaco editor [allows only one theme per page](https://github.com/microsoft/monaco-editor/issues/338) so you can't have different editor instances using different themes.
+* **Code Field Theme** - The theme to use for the Code Field editor. It can be either Auto, Visual Studio Light, Visual Studio Dark, or High Contrast Dark. **Auto** will set the light/dark theme based on browser light/dark mode. **N.B.:** The Monaco editor [allows only one theme per page](https://github.com/microsoft/monaco-editor/issues/338) so you can’t have different editor instances using different themes.
 * **Code Field Default Language** - The language to use for the Code Field editor. This can optionally be changed by content authors while using the field (see below)
 * **Font Size** - The font size to use for the Code Field editor
 * **Single Line Code Field** - Whether the editor should behave like a Craft field that can be tabbed between, and displays as a single line, with no line breaks.
@@ -99,7 +99,7 @@ To output the contents of the field on the frontend, simply do:
 {{ entry.someCode.value | raw }}
 ```
 
-If you need to know the language or other settings for the Code Field editor, you can get that as well:
+To know the language or other settings for the Code Field editor, you can get that as well:
 
 ```twig
     {# Do whatever you need to do for this language #}
@@ -110,11 +110,11 @@ If you need to know the language or other settings for the Code Field editor, yo
     <pre><code>{{ entry.someCode.value | raw }}</code></pre>
 ```
 
-This will not result in any formatting of syntax highlighting of the code on the frontend; that's up to you to do as you see fit.
+This will not result in any formatting of syntax highlighting of the code on the frontend; that’s up to you to do as you see fit.
 
 However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
 
-In order to do this, you need to enable the `allowFrontendAccess` option in `craft-code-editor`.
+To do this, you need to enable the `allowFrontendAccess` option in `craft-code-editor`.
 
 The following `monacoOptions` allow you to make the field read-only (though the user can still interact with the code):
 ```json
@@ -136,7 +136,7 @@ If you are storing Twig code, you can actually render that on the frontend using
 
 ### GraphQL
 
-Code Field supports GraphQL, here's an example query:
+Code Field supports GraphQL, here’s an example query:
 
 ```GraphQL
 {
@@ -157,7 +157,7 @@ In this example, `someCode` is the Code Field field handle. The schema supports 
 * **`language`** - The language of the Code Field
 * **`value`** - The data entered into the Code Field
 
-Here's an example of the data returned from the above query:
+Here’s an example of the data returned from the above query:
 
 ```json
 {
