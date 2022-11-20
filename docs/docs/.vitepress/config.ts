@@ -28,6 +28,11 @@ export default defineConfig({
     },
     lastUpdatedText: 'Last Updated',
     sidebar: [],
-    nav: [],
+    nav: [
+      {text: 'Home', link: 'https://nystudio107.com/plugins/code-field'},
+      {text: 'Store', link: 'https://plugins.craftcms.com/codefield'},
+      {text: 'Changelog', link: 'https://nystudio107.com/plugins/code-field/changelog'},
+      {text: 'Issues', link: 'https://github.com/nystudio107/craft-code-field/issues'},
+    ]
   },
 });
