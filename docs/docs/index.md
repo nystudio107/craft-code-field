@@ -10,6 +10,8 @@ description: Documentation for the Code Field plugin.  The Code Field plugin pro
 
 Provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
 
+![Screenshot](./resources/img/plugin-logo.png)
+
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0 or later or Craft CMS 4.0.0 or later.
