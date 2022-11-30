@@ -4,3 +4,4 @@ declare module "*.vue" {
 }
 
 declare module 'rollup-plugin-sitemap';
+declare module 'NYSLogo';

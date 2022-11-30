@@ -16,7 +16,7 @@ export default defineConfig({
       {icon: 'github', link: 'https://github.com/nystudio107'},
       {icon: 'twitter', link: 'https://twitter.com/nystudio107'},
     ],
-    logo: '/resources/img/plugin-logo.svg',
+    logo: '/img/plugin-logo.svg',
     editLink: {
       pattern: 'https://github.com/nystudio107/craft-code-field/edit/develop-v3/docs/docs/:path',
       text: 'Edit this page on GitHub'
