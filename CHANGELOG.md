@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.4 - 2022.11.30
+### Changed
+* Wrap the fields in `<fieldset>` tags if the language selector is visible
+
 ## 3.0.3 - 2022.11.16
 ### Added
 * Added GraphQL support ([#2](https://github.com/nystudio107/craft-code-field/issues/2))
