@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.4 - 2022.11.30
+### Changed
+* Wrap the fields in `<fieldset>` tags if the language selector is visible
+* Remove the odd Craft `modifiedAttributes` styling when a field value is changed ([#12403](https://github.com/craftcms/cms/issues/12403))
+
 ## 3.0.3 - 2022.11.16
 ### Added
 * Added GraphQL support ([#2](https://github.com/nystudio107/craft-code-field/issues/2))

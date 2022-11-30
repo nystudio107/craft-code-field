@@ -51,13 +51,21 @@
     wrapperClass: "monaco-editor-background-frame",
     singleLineEditor: field.singleLineEditor,
 } %}
-{% if field.singleLineEditor %}
-    {{ codeEditor.textField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
-{% else %}
-    {{ codeEditor.textareaField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
-{% endif %}
-
 {% if displayLanguages | length %}
+<fieldset class="code-field-fields">
+    <style>
+        fieldset.code-field-fields .status-badge {
+            display: none;
+        }
+    </style>
+    {% endif %}
+    {% if field.singleLineEditor %}
+        {{ codeEditor.textField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
+    {% else %}
+        {{ codeEditor.textareaField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
+    {% endif %}
+
+    {% if displayLanguages | length %}
     {% set languageSwitcherId = codeFieldId ~ "language" %}
     {{ forms.selectField({
         id: languageSwitcherId,
@@ -66,6 +74,7 @@
         value: value.language,
         options: displayLanguages,
     }) }}
+</fieldset>
     {% js %}
     var elementId = '{{ config.id | namespaceInputId }}';
     var switchId = '{{ languageSwitcherId | namespaceInputId }}';
