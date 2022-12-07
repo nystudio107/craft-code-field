@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.5 - 2022.12.07
+### Changed
+* Cleaned up the formatting of the Code Field field title
+
 ## 4.0.4 - 2022.11.30
 ### Changed
 * Wrap the fields in `<fieldset>` tags if the language selector is visible
