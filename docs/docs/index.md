@@ -112,7 +112,9 @@ To know the language or other settings for the Code Field editor, you can get th
     <pre><code>{{ entry.someCode.value | raw }}</code></pre>
 ```
 
-This will not result in any formatting of syntax highlighting of the code on the frontend; that’s up to you to do as you see fit.
+This will not result in any formatting of syntax highlighting of the code on the frontend; that’s up to you to do as you see fit (using [highlight.js](https://highlightjs.org/), [Prism](https://prismjs.com/), etc.).
+
+### Rendering with Syntax Highlighting
 
 However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
 
@@ -126,7 +128,27 @@ The following `monacoOptions` allow you to make the field read-only (though the 
 }
 ```
 
+So putting it together, if your Code Field field handle is `someCode`, this would allow you to display it on the frontend with full syntax highlighting, etc.:
+
+```twig
+    {% import "codeeditor/codeEditor" as codeEditor %}
+
+    <div class="container">
+        <textarea id="myCodeEditor">{{ entry.someCode.value }}</textarea>
+    </div>
+    {{ codeEditor.includeJs("myCodeEditor", "Frontend Editor", {
+        language: entry.someCode.language,
+        theme: "auto",
+        "domReadOnly": true,
+        "readOnly": true
+    }) }}
+```
+
+...and it will look something like this:
+
 ![Frontend Read Only](./resources/screenshots/code-field-frontend-read-only.png)
+
+### Rendering Twig Code Output
 
 If you are storing Twig code, you can actually render that on the frontend using [renderObjectTemplate](https://craftcms.com/docs/4.x/dev/functions.html#renderobjecttemplate) if you like:
 
