@@ -20,10 +20,11 @@
     id: codeFieldId ~ "value",
     name: name ~ "[value]",
     describedBy: field.describedBy,
-    value: value.value,
     placeholder: field.placeholder ?? "",
     required: field.required,
+    first: true,
     orientation: orientation ?? null,
+    value: value.value,
 } %}
 
 {# Monaco Editor options #}
