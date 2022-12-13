@@ -37,6 +37,14 @@ class CodeData extends Model
     // =========================================================================
 
     /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return (string)$this->value;
+    }
+
+    /**
      * @inheritdoc
      */
     public function init()
