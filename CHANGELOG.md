@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.6 - 2022.12.13
+### Changed
+* Added `__toString()` method to the `CodeData` class so that `{{ entry.codeField }}` will work without needing to add `.value` ([#3](https://github.com/nystudio107/craft-code-field/issues/3))
+
 ## 3.0.5 - 2022.12.07
 ### Changed
 * Cleaned up the formatting of the Code Field field title
