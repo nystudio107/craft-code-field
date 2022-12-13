@@ -22,9 +22,9 @@ export default defineConfig({
       text: 'Edit this page on GitHub'
     },
     algolia: {
-      appId: 'AE3HRUJFEW',
-      apiKey: 'c5dcc2be096fff3a4714c3a877a056fa',
-      indexName: 'codefield'
+      appId: '74MFI8NU6J',
+      apiKey: '99c5714e228ccbcda7903f5f6e419a19',
+      indexName: 'nystudio107-code-field'
     },
     lastUpdatedText: 'Last Updated',
     sidebar: [],
