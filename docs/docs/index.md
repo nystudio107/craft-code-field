@@ -118,8 +118,6 @@ This will not result in any formatting of syntax highlighting of the code on the
 
 However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
 
-To do this, you need to enable the `allowFrontendAccess` option in `craft-code-editor`.
-
 The following `monacoOptions` allow you to make the field read-only (though the user can still interact with the code):
 ```json
 {
@@ -148,6 +146,8 @@ So putting it together, if your Code Field field handle is `someCode`, this woul
 
 ![Frontend Read Only](./resources/screenshots/code-field-frontend-read-only.png)
 
+If you want Twig & Craft API autocompletes to work on the frontend, you'll need to enable the [`allowFrontendAccess`](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) setting in `craft-code-editor`, but this isn't necessary if the code is just for display purposes.
+
 ### Rendering Twig Code Output
 
 If you are storing Twig code, you can actually render that on the frontend using [renderObjectTemplate](https://craftcms.com/docs/4.x/dev/functions.html#renderobjecttemplate) if you like:
@@ -164,15 +164,15 @@ Code Field supports GraphQL, here’s an example query:
 
 ```GraphQL
 {
-  entries(section: "blog", limit:1) {
-    ...on blog_blog_Entry {
-      title,
-      someCode {
-        language,
-        value
+   entries(section: "blog", limit:1) {
+      ...on blog_blog_Entry {
+         title,
+         someCode {
+            language,
+            value
+         }
       }
-    }
-  }
+   }
 }
 ```
 
