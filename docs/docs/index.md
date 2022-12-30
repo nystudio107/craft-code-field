@@ -112,11 +112,11 @@ To know the language or other settings for the Code Field editor, you can get th
     <pre><code>{{ entry.someCode.value | raw }}</code></pre>
 ```
 
-This will not result in any formatting of syntax highlighting of the code on the frontend; that’s up to you to do as you see fit (using [highlight.js](https://highlightjs.org/), [Prism](https://prismjs.com/), etc.).
+This will not result in any formatting of syntax highlighting of the code on the frontend; that’s up to you to do as you see fit (using [Shiki](https://shiki.matsu.io/), [highlight.js](https://highlightjs.org/), [Prism](https://prismjs.com/), etc.).
 
 ### Rendering with Syntax Highlighting
 
-However, you can use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
+However, you can also use the [craft-code-editor](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) Twig macros directly to display the Code Field editor on the frontend.
 
 The following `monacoOptions` allow you to make the field read-only (though the user can still interact with the code):
 ```json
