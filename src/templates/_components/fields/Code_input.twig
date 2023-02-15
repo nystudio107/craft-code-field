@@ -53,12 +53,7 @@
     singleLineEditor: field.singleLineEditor,
 } %}
 {% if displayLanguages | length %}
-<fieldset class="code-field-fields">
-    <style>
-        fieldset.code-field-fields .status-badge {
-            display: none;
-        }
-    </style>
+<fieldset style="min-inline-size: initial; min-width: initial;">
     {% endif %}
     {% if field.singleLineEditor %}
         {{ codeEditor.textField(config, "CodeEditor", monacoOptions, codeEditorOptions) }}
