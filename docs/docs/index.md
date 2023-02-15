@@ -164,15 +164,15 @@ Code Field supports GraphQL, here’s an example query:
 
 ```GraphQL
 {
-   entries(section: "blog", limit:1) {
-      ...on blog_blog_Entry {
-         title,
-         someCode {
-            language,
-            value
-         }
+  entries(section: "blog", limit:1) {
+    ...on blog_blog_Entry {
+      title,
+      someCode {
+        language,
+        value
       }
-   }
+    }
+  }
 }
 ```
 
