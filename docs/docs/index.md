@@ -81,7 +81,7 @@ Clicking on **Advanced** discloses a **Monaco Editor Settings Override** field:
 
 ![Markdown](./resources/screenshots/code-field-options-override.png)
 
-This allows you to override any of the Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) settings via a JSON blob configuration.
+This allows you to override any of the Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/enums/editor.EditorOption.html) settings via a JSON blob configuration.
 
 Using this, you can control every aspect of the Code Field editor.
 
