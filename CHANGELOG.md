@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.7 - 2023.02.15
+### Fixed
+* Fixed an issue that would cause the editor to display outside of the field's display area ([#4](https://github.com/nystudio107/craft-code-field/issues/4))
+
 ## 4.0.6 - 2022.12.13
 ### Changed
 * Added `__toString()` method to the `CodeData` class so that `{{ entry.codeField }}` will work without needing to add `.value` ([#3](https://github.com/nystudio107/craft-code-field/issues/3))
