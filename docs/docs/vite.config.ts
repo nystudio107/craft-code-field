@@ -20,7 +20,7 @@ export default defineConfig({
   ],
   server: {
     host: '0.0.0.0',
-    port: 3002,
+    port: parseInt(process.env.DOCS_DEV_PORT ?? '4000'),
     strictPort: true,
   }
 });
