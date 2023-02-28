@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.8 - UNRELEASED
+### Added
+* Allow you to choose `text` or `mediumtext` for the content column storage for Code Editor fields (under Advanced Settings) ([#6](https://github.com/nystudio107/craft-code-field/issues/6))
+
 ## 4.0.7 - 2023.02.15
 ### Changed
 * Refactored the docs buildchain to use a dynamic docker container setup
