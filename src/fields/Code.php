@@ -90,6 +90,11 @@ class Code extends Field implements PreviewableFieldInterface
     ];
 
     /**
+     * @var string|null The type of database column the field should have in the content table
+     */
+    public $columnType = Schema::TYPE_TEXT;
+
+    /**
      * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings
      */
     public $monacoEditorOptions = '';
@@ -246,6 +251,10 @@ class Code extends Field implements PreviewableFieldInterface
      */
     public function getContentColumnType(): string
     {
+        if ($this->columnType) {
+            return $this->columnType;
+        }
+
         return Schema::TYPE_TEXT;
     }
 }
