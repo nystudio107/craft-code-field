@@ -158,3 +158,18 @@
         errors: field.getErrors("monacoEditorOptions")
     }, "CodeField", {language: "json"}, {wrapperClass: "monaco-editor-background-frame"}) }}
 </div>
+
+{% js %}
+// Add schema definitions for this JSON editor field
+var jsonSchemaUri = 'https://craft-code-editor.com/{{ "monacoEditorOptions"|namespaceInputId }}';
+var jsonSchema = {
+  uri: jsonSchemaUri,
+  fileMatch: [jsonSchemaUri],
+  schema: {{ optionsSchema | raw }}
+}
+// configure the JSON language support with schemas and schema associations
+monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+  validate: true,
+  schemas: [jsonSchema]
+});
+{% endjs %}
