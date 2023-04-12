@@ -161,12 +161,15 @@ class Code extends Field implements PreviewableFieldInterface
     public function getSettingsHtml()
     {
         $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
+        $schemaFilePath = Craft::getAlias('@nystudio107/codefield/resources/IEditorOptionsSchema.json');
+        $optionsSchema = @file_get_contents($schemaFilePath) ?: '';
         // Render the settings template
         return Craft::$app->getView()->renderTemplate(
             'codefield/_components/fields/Code_settings',
             [
                 'field' => $this,
                 'monacoLanguages' => $monacoLanguages,
+                'optionsSchema' => $optionsSchema,
             ]
         );
     }
