@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file
 ## 3.0.8 - UNRELEASED
 ### Added
 * Allow you to choose `text` or `mediumtext` for the content column storage for Code Editor fields (under Advanced Settings) ([#6](https://github.com/nystudio107/craft-code-field/issues/6))
+* Added full autocomplete of the JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) in the Code Field's Advanced Settings
 
 ## 3.0.7 - 2023.02.15
 ### Changed
