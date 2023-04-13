@@ -3,7 +3,7 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
   title: 'Code Field Plugin',
   description: 'Documentation for the Code Field plugin',
-  base: '/docs/code-field/',
+  base: '/docs/code-field/v3/',
   lang: 'en-US',
   head: [
     ['meta', {content: 'https://github.com/nystudio107', property: 'og:see_also',}],
@@ -33,6 +33,12 @@ export default defineConfig({
       {text: 'Store', link: 'https://plugins.craftcms.com/codefield'},
       {text: 'Changelog', link: 'https://nystudio107.com/plugins/code-field/changelog'},
       {text: 'Issues', link: 'https://github.com/nystudio107/craft-code-field/issues'},
+      {
+        text: 'v3', items: [
+          {text: 'v4', link: 'https://nystudio107.com/docs/seomatic/'},
+          {text: 'v3', link: '/'},
+        ],
+      },
     ]
   },
 });
