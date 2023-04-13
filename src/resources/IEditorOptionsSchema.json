@@ -1,0 +1,1564 @@
+{
+  "type": "object",
+  "properties": {
+    "acceptSuggestionOnCommitCharacter": {
+      "default": true,
+      "description": "Accept suggestions on provider defined characters. Defaults to true.",
+      "type": "boolean"
+    },
+    "acceptSuggestionOnEnter": {
+      "default": "on",
+      "description": "Accept suggestions on ENTER. Defaults to 'on'.",
+      "enum": [
+        "on",
+        "off",
+        "smart"
+      ],
+      "type": "string"
+    },
+    "accessibilityPageSize": {
+      "default": 3,
+      "description": "Controls the number of lines in the editor that can be read out by a screen reader",
+      "type": "number"
+    },
+    "accessibilitySupport": {
+      "default": "auto",
+      "description": "Configure the editor's accessibility support. Defaults to 'auto'. It is best to leave this to 'auto'.",
+      "type": "string"
+    },
+    "ariaLabel": {
+      "default": "",
+      "description": "The aria label for the editor's textarea (when it is focused).",
+      "type": "string"
+    },
+    "autoClosingBrackets": {
+      "default": "languageDefined",
+      "description": "Options for auto closing brackets. Defaults to language defined behavior.",
+      "enum": [
+        "always",
+        "languageDefined",
+        "beforeWhitespace",
+        "never"
+      ],
+      "type": "string"
+    },
+    "autoClosingDelete": {
+      "default": "auto",
+      "description": "Options for pressing backspace near quotes or bracket pairs.",
+      "enum": [
+        "always",
+        "auto",
+        "never"
+      ],
+      "type": "string"
+    },
+    "autoClosingOvertype": {
+      "default": "auto",
+      "description": "Configuration options for typing over closing quotes or brackets.",
+      "enum": [
+        "always",
+        "auto",
+        "never"
+      ],
+      "type": "string"
+    },
+    "autoClosingQuotes": {
+      "default": "languageDefined",
+      "description": "Configuration options for auto closing quotes and brackets.",
+      "enum": [
+        "always",
+        "languageDefined",
+        "beforeWhitespace",
+        "never"
+      ],
+      "type": "string"
+    },
+    "autoIndent": {
+      "default": "advanced",
+      "description": "Controls whether the editor should automatically adjust the indentation when users type, paste, move or indent lines. Defaults to advanced.",
+      "enum": [
+        "none",
+        "advanced",
+        "full",
+        "brackets",
+        "keep"
+      ],
+      "type": "string"
+    },
+    "autoSurround": {
+      "default": "languageDefined",
+      "description": "Configuration options for auto wrapping quotes and brackets.",
+      "enum": [
+        "languageDefined",
+        "quotes",
+        "brackets",
+        "never"
+      ],
+      "type": "string"
+    },
+    "automaticLayout": {
+      "default": false,
+      "description": "Enable that the editor will install a ResizeObserver to check if its container dom node size has changed. Defaults to false.",
+      "type": "boolean"
+    },
+    "bracketPairColorization": {
+      "description": "Configures bracket pair colorization (disabled by default).",
+      "properties": {
+        "enabled": {
+          "default": false,
+          "description": "Enable or disable bracket pair colorization.",
+          "type": "boolean"
+        },
+        "independentColorPoolPerBracketType": {
+          "default": false,
+          "description": "Use independent color pool per bracket type.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "codeActionsOnSaveTimeout": {
+      "default": 0,
+      "description": "Timeout for running code actions on save.",
+      "type": "number"
+    },
+    "codeLens": {
+      "default": true,
+      "description": "Show code lens. Defaults to true.",
+      "type": "boolean"
+    },
+    "codeLensFontFamily": {
+      "description": "Code lens font family. Defaults to editor font family.",
+      "type": "string"
+    },
+    "codeLensFontSize": {
+      "description": "Code lens font size. Default to 90% of the editor font size",
+      "type": "number"
+    },
+    "colorDecorators": {
+      "description": "Enable inline color decorators and color picker rendering.",
+      "type": "boolean"
+    },
+    "colorDecoratorsLimit": {
+      "description": "Controls the max number of color decorators that can be rendered in an editor at once.",
+      "type": "number"
+    },
+    "columnSelection": {
+      "default": false,
+      "description": "Enable that the selection with the mouse and keys is doing column selection. Defaults to false.",
+      "type": "boolean"
+    },
+    "comments": {
+      "description": "Control the behaviour of comments in the editor.",
+      "properties": {
+        "ignoreEmptyLines": {
+          "default": true,
+          "description": "Ignore empty lines when inserting line comments. Defaults to true.",
+          "type": "boolean"
+        },
+        "insertSpace": {
+          "default": true,
+          "description": "Insert a space after the line comment token and inside the block comments tokens. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "contextmenu": {
+      "default": true,
+      "description": "Enable custom contextmenu. Defaults to true.",
+      "type": "boolean"
+    },
+    "copyWithSyntaxHighlighting": {
+      "description": "Syntax highlighting is copied.",
+      "type": "boolean"
+    },
+    "cursorBlinking": {
+      "default": "blink",
+      "description": "Control the cursor animation style, possible values are 'blink', 'smooth', 'phase', 'expand' and 'solid'. Defaults to 'blink'.",
+      "enum": [
+        "blink",
+        "smooth",
+        "phase",
+        "expand",
+        "solid"
+      ],
+      "type": "string"
+    },
+    "cursorSmoothCaretAnimation": {
+      "default": "off",
+      "description": "Enable smooth caret animation. Defaults to 'off'.",
+      "enum": [
+        "on",
+        "off",
+        "explicit"
+      ],
+      "type": "string"
+    },
+    "cursorStyle": {
+      "default": "line",
+      "description": "Control the cursor style, either 'block' or 'line'. Defaults to 'line'.",
+      "enum": [
+        "line",
+        "block",
+        "underline",
+        "line-thin",
+        "block-outline",
+        "underline-thin"
+      ],
+      "type": "string"
+    },
+    "cursorSurroundingLines": {
+      "default": 0,
+      "description": "Controls the minimal number of visible leading and trailing lines surrounding the cursor. Defaults to 0.",
+      "type": "number"
+    },
+    "cursorSurroundingLinesStyle": {
+      "default": "default",
+      "description": "Controls when cursorSurroundingLines should be enforced Defaults to default, cursorSurroundingLines is not enforced when cursor position is changed by mouse.",
+      "enum": [
+        "default",
+        "all"
+      ],
+      "type": "string"
+    },
+    "cursorWidth": {
+      "description": "Control the width of the cursor when cursorStyle is set to 'line'.",
+      "type": "number"
+    },
+    "definitionLinkOpensInPeek": {
+      "default": false,
+      "description": "Controls whether the definition link opens element in the peek widget. Defaults to false.",
+      "type": "boolean"
+    },
+    "disableLayerHinting": {
+      "default": false,
+      "description": "Disable the use of transform: translate3d(0px, 0px, 0px) for the editor margin and lines layers. The usage of transform: translate3d(0px, 0px, 0px) acts as a hint for browsers to create an extra layer. Defaults to false.",
+      "type": "boolean"
+    },
+    "disableMonospaceOptimizations": {
+      "default": false,
+      "description": "Disable the optimizations for monospace fonts. Defaults to false.",
+      "type": "boolean"
+    },
+    "domReadOnly": {
+      "default": false,
+      "description": "Should the textarea used for input use the DOM readonly attribute. Defaults to false.",
+      "type": "boolean"
+    },
+    "dragAndDrop": {
+      "default": false,
+      "description": "Controls if the editor should allow to move selections via drag and drop. Defaults to false.",
+      "type": "boolean"
+    },
+    "dropIntoEditor": {
+      "description": "Controls dropping into the editor from an external source. When enabled, this shows a preview of the drop location and triggers an onDropIntoEditor event.",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Enable the dropping into editor. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "emptySelectionClipboard": {
+      "description": "Copying without a selection copies the current line.",
+      "type": "boolean"
+    },
+    "experimentalWhitespaceRendering": {
+      "default": "svg",
+      "description": "Enable experimental whitespace rendering. Defaults to 'svg'.",
+      "enum": [
+        "off",
+        "svg",
+        "font"
+      ],
+      "type": "string"
+    },
+    "extraEditorClassName": {
+      "description": "Class name to be added to the editor.",
+      "type": "string"
+    },
+    "fastScrollSensitivity": {
+      "default": 5,
+      "description": "FastScrolling mulitplier speed when pressing Alt Defaults to 5.",
+      "type": "number"
+    },
+    "find": {
+      "description": "Control the behavior of the find widget.\n\n",
+      "properties": {
+        "addExtraSpaceOnTop": {
+          "description": "",
+          "type": "boolean"
+        },
+        "autoFindInSelection": {
+          "description": "Controls if Find in Selection flag is turned on in the editor.",
+          "enum": [
+            "always",
+            "never",
+            "multiline"
+          ],
+          "type": "string"
+        },
+        "cursorMoveOnType": {
+          "description": "Controls whether the cursor should move to find matches while typing.",
+          "type": "boolean"
+        },
+        "loop": {
+          "description": "Controls whether the search result and diff result automatically restarts from the beginning (or the end) when no further matches can be found.",
+          "type": "boolean"
+        },
+        "seedSearchStringFromSelection": {
+          "description": "Controls if we seed search string in the Find Widget with editor selection.",
+          "enum": [
+            "always",
+            "never",
+            "selection"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "fixedOverflowWidgets": {
+      "default": false,
+      "description": "Display overflow widgets as fixed. Defaults to false.",
+      "type": "boolean"
+    },
+    "folding": {
+      "default": true,
+      "description": "Enable code folding. Defaults to true.",
+      "type": "boolean"
+    },
+    "foldingHighlight": {
+      "default": true,
+      "description": "Enable highlight for folded regions. Defaults to true.",
+      "type": "boolean"
+    },
+    "foldingImportsByDefault": {
+      "default": true,
+      "description": "Auto fold imports folding regions. Defaults to true.",
+      "type": "boolean"
+    },
+    "foldingMaximumRegions": {
+      "default": 5000,
+      "description": "Maximum number of foldable regions. Defaults to 5000.",
+      "type": "number"
+    },
+    "foldingStrategy": {
+      "default": "auto",
+      "description": "Selects the folding strategy. 'auto' uses the strategies contributed for the current document, 'indentation' uses the indentation based folding strategy. Defaults to 'auto'.",
+      "enum": [
+        "auto",
+        "indentation"
+      ],
+      "type": "string"
+    },
+    "fontFamily": {
+      "description": "The font family",
+      "type": "string"
+    },
+    "fontLigatures": {
+      "default": false,
+      "description": "Enable font ligatures. Defaults to false.",
+      "type": "boolean"
+    },
+    "fontSize": {
+      "description": "The font size",
+      "type": "number"
+    },
+    "fontVariations": {
+      "default": false,
+      "description": "Enable font variations. Defaults to false.",
+      "type": [
+        "boolean",
+        "string"
+      ]
+    },
+    "fontWeight": {
+      "description": "The font weight",
+      "type": "string"
+    },
+    "formatOnPaste": {
+      "default": false,
+      "description": "Enable format on paste. Defaults to false.",
+      "type": "boolean"
+    },
+    "formatOnType": {
+      "default": false,
+      "description": "Enable format on type. Defaults to false.",
+      "type": "boolean"
+    },
+    "glyphMargin": {
+      "default": false,
+      "description": "Enable the rendering of the glyph margin. Defaults to true in vscode and to false in monaco-editor.",
+      "type": "boolean"
+    },
+    "gotoLocation": {
+      "description": "Configuration options for go to location.",
+      "properties": {
+        "alternativeDeclarationCommand": {
+          "type": "string"
+        },
+        "alternativeDefinitionCommand": {
+          "type": "string"
+        },
+        "alternativeImplementationCommand": {
+          "type": "string"
+        },
+        "alternativeReferenceCommand": {
+          "type": "string"
+        },
+        "alternativeTypeDefinitionCommand": {
+          "type": "string"
+        },
+        "multiple": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        },
+        "multipleDeclarations": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        },
+        "multipleDefinitions": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        },
+        "multipleImplementations": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        },
+        "multipleReferences": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        },
+        "multipleTypeDefinitions": {
+          "enum": [
+            "peek",
+            "gotoAndPeek",
+            "goto"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "guides": {
+      "description": "Controls the behavior of editor guides.",
+      "properties": {
+        "bracketPairs": {
+          "default": false,
+          "description": "Enable rendering of bracket pair guides. Defaults to false.",
+          "enum": [
+            true,
+            false,
+            "active"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "bracketPairsHorizontal": {
+          "default": "active",
+          "description": "Enable rendering of vertical bracket pair guides. Defaults to 'active'.",
+          "enum": [
+            true,
+            false,
+            "active"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "highlightActiveBracketPair": {
+          "default": true,
+          "description": "Enable highlighting of the active bracket pair. Defaults to true.",
+          "type": "boolean"
+        },
+        "highlightActiveIndentation": {
+          "default": true,
+          "description": "Enable highlighting of the active indent guide. Defaults to true.",
+          "enum": [
+            true,
+            false,
+            "always"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "indentation": {
+          "default": true,
+          "description": "Enable rendering of indent guides. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "hideCursorInOverviewRuler": {
+      "default": false,
+      "description": "Should the cursor be hidden in the overview ruler. Defaults to false.",
+      "type": "boolean"
+    },
+    "hover": {
+      "description": "Configure the editor's hover.",
+      "properties": {
+        "above": {
+          "default": false,
+          "description": "Should the hover be shown above the line if possible? Defaults to false.",
+          "type": "boolean"
+        },
+        "delay": {
+          "default": 300,
+          "description": "Delay for showing the hover. Defaults to 300.",
+          "type": "number"
+        },
+        "enabled": {
+          "default": true,
+          "description": "Enable the hover. Defaults to true.",
+          "type": "boolean"
+        },
+        "sticky": {
+          "default": true,
+          "description": "Is the hover sticky such that it can be clicked and its contents selected? Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "inDiffEditor": {
+      "description": "This editor is used inside a diff editor.",
+      "type": "boolean"
+    },
+    "inlayHints": {
+      "description": "Control the behavior and rendering of the inline hints.",
+      "properties": {
+        "enabled": {
+          "default": true,
+          "description": "Enable the inline hints. Defaults to true.",
+          "enum": [
+            true,
+            false,
+            "on",
+            "off",
+            "offUnlessPressed",
+            "onUnlessPressed"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "fontFamily": {
+          "description": "Font family of inline hints. Defaults to editor font family.",
+          "type": "string"
+        },
+        "fontSize": {
+          "description": "Font size of inline hints. Default to 90% of the editor font size.",
+          "type": "number"
+        },
+        "padding": {
+          "description": "Font size of inline hints. Default to 90% of the editor font size.",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "inlineSuggest": {
+      "description": "Inline suggest options.",
+      "properties": {
+        "enabled": {
+          "description": "Enable or disable the rendering of automatic inline completions.",
+          "type": "boolean"
+        },
+        "mode": {
+          "default": "prefix",
+          "description": "Configures the mode. Use prefix to only show ghost text if the text to replace is a prefix of the suggestion text. Use subword to only show ghost text if the replace text is a subword of the suggestion text. Use subwordSmart to only show ghost text if the replace text is a subword of the suggestion text, but the subword must start after the cursor position. Defaults to prefix.",
+          "enum": [
+            "prefix",
+            "subword",
+            "subwordSmart"
+          ],
+          "type": "string"
+        },
+        "showToolbar": {
+          "description": "Determines whether the toolbar is displayed.",
+          "enum": [
+            "always",
+            "onHover"
+          ],
+          "type": "string"
+        },
+        "suppressSuggestions": {
+          "description": "Whether suggestions should be supressed.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "letterSpacing": {
+      "description": "The letter spacing",
+      "type": "number"
+    },
+    "lightbulb": {
+      "description": "Control the behavior and rendering of the code action lightbulb.",
+      "properties": {
+        "enabled": {
+          "description": "Enable the lightbulb code action. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "lineDecorationsWidth": {
+      "default": 10,
+      "description": "The width reserved for line decorations (in px). Line decorations are placed between line numbers and the editor content. You can pass in a string in the format floating point followed by \"ch\". e.g. 1.3ch. Defaults to 10.",
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "lineHeight": {
+      "description": "The line height.",
+      "type": "number"
+    },
+    "lineNumbers": {
+      "default": "on",
+      "description": "Control the rendering of line numbers. If it is a function, it will be invoked when rendering a line number and the return value will be rendered. Otherwise, if it is a truthy, line numbers will be rendered normally (equivalent of using an identity function). Otherwise, line numbers will not be rendered. Defaults to on.",
+      "enum": [
+        "on",
+        "off",
+        "relative",
+        "interval"
+      ],
+      "type": "string"
+    },
+    "lineNumbersMinChars": {
+      "default": 5,
+      "description": "Control the width of line numbers, by reserving horizontal space for rendering at least an amount of digits. Defaults to 5.",
+      "type": "number"
+    },
+    "linkedEditing": {
+      "default": false,
+      "description": "Enable linked editing. Defaults to false.",
+      "type": "boolean"
+    },
+    "links": {
+      "default": true,
+      "description": "Enable detecting links and making them clickable. Defaults to true.",
+      "type": "boolean"
+    },
+    "matchBrackets": {
+      "default": "always",
+      "description": "Enable highlighting of matching brackets. Defaults to 'always'.",
+      "enum": [
+        "always",
+        "never",
+        "near"
+      ],
+      "type": "string"
+    },
+    "matchOnWordStartOnly": {
+      "description": "Controls whether suggestions allow matches in the middle of the word instead of only at the beginning",
+      "type": "boolean"
+    },
+    "minimap": {
+      "description": "Controls dropping into the editor from an external source. When enabled, this shows a preview of the drop location and triggers an onDropIntoEditor event.",
+      "properties": {
+        "autohide": {
+          "description": "Control the rendering of minimap.",
+          "type": "boolean"
+        },
+        "enabled": {
+          "default": true,
+          "description": "Enable the rendering of the minimap. Defaults to true.",
+          "type": "boolean"
+        },
+        "maxColumn": {
+          "default": 120,
+          "description": "Limit the width of the minimap to render at most a certain number of columns. Defaults to 120.",
+          "type": "number"
+        },
+        "renderCharacters": {
+          "default": true,
+          "description": "Render the actual text on a line (as opposed to color blocks). Defaults to true.",
+          "type": "boolean"
+        },
+        "scale": {
+          "default": 1,
+          "description": "Relative size of the font in the minimap. Defaults to 1.",
+          "type": "number"
+        },
+        "showSlider": {
+          "default": "mouseover",
+          "description": "Control the rendering of the minimap slider. Defaults to 'mouseover'.",
+          "enum": [
+            "always",
+            "mouseover"
+          ],
+          "type": "string"
+        },
+        "side": {
+          "default": "right",
+          "description": "Control the side of the minimap in editor. Defaults to 'right'.",
+          "enum": [
+            "right",
+            "left"
+          ],
+          "type": "string"
+        },
+        "size": {
+          "default": "actual",
+          "description": "Control the minimap rendering mode. Defaults to 'actual'.",
+          "enum": [
+            "actual",
+            "proportional",
+            "fill",
+            "fit"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "mouseStyle": {
+      "default": "text",
+      "description": "Control the mouse pointer style, either 'text' or 'default' or 'copy' Defaults to 'text'",
+      "enum": [
+        "default",
+        "text",
+        "copy"
+      ],
+      "type": "string"
+    },
+    "mouseWheelScrollSensitivity": {
+      "default": 1,
+      "description": "A multiplier to be used on the deltaX and deltaY of mouse wheel scroll events. Defaults to 1.",
+      "type": "number"
+    },
+    "mouseWheelZoom": {
+      "default": false,
+      "description": "Zoom the font in the editor when using the mouse wheel in combination with holding Ctrl. Defaults to false.",
+      "type": "boolean"
+    },
+    "multiCursorLimit": {
+      "description": "Controls the max number of text cursors that can be in an active editor at once.",
+      "type": "number"
+    },
+    "multiCursorMergeOverlapping": {
+      "default": true,
+      "description": "Merge overlapping selections. Defaults to true",
+      "type": "boolean"
+    },
+    "multiCursorModifier": {
+      "default": "all",
+      "description": "The modifier to be used to add multiple cursors with the mouse. Defaults to 'alt'",
+      "enum": [
+        "ctrlCmd",
+        "alt"
+      ],
+      "type": "string"
+    },
+    "multiCursorPaste": {
+      "default": "spread",
+      "description": "Configure the behaviour when pasting a text with the line count equal to the cursor count. Defaults to 'spread'.",
+      "enum": [
+        "spread",
+        "full"
+      ],
+      "type": "string"
+    },
+    "occurrencesHighlight": {
+      "default": true,
+      "description": "Enable semantic occurrences highlight. Defaults to true.",
+      "type": "boolean"
+    },
+    "overviewRulerBorder": {
+      "default": true,
+      "description": "Controls if a border should be drawn around the overview ruler. Defaults to true.",
+      "type": "boolean"
+    },
+    "overviewRulerLanes": {
+      "default": 3,
+      "description": "The number of vertical lanes the overview ruler should render. Defaults to 3.",
+      "type": "number"
+    },
+    "padding": {
+      "description": "Controls the spacing around the editor.",
+      "properties": {
+        "bottom": {
+          "description": "Spacing between bottom edge of editor and last line.",
+          "type": "number"
+        },
+        "top": {
+          "description": "Spacing between top edge of editor and first line.",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "parameterHints": {
+      "description": "Parameter hint options.",
+      "properties": {
+        "cycle": {
+          "default": false,
+          "description": "Enable cycling of parameter hints. Defaults to false.",
+          "type": "boolean"
+        },
+        "enabled": {
+          "default": true,
+          "description": "Enable parameter hints. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "peekWidgetDefaultFocus": {
+      "default": false,
+      "description": "Controls whether to focus the inline editor in the peek widget by default. Defaults to false.",
+      "enum": [
+        false,
+        "tree",
+        "editor"
+      ],
+      "type": [
+        "boolean",
+        "string"
+      ]
+    },
+    "quickSuggestions": {
+      "default": true,
+      "description": "Enable quick suggestions (shadow suggestions) Defaults to true.",
+      "properties": {
+        "comments": {
+          "enum": [
+            true,
+            false,
+            "on",
+            "inline",
+            "off"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "other": {
+          "enum": [
+            true,
+            false,
+            "on",
+            "inline",
+            "off"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "strings": {
+          "enum": [
+            true,
+            false,
+            "on",
+            "inline",
+            "off"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        }
+      },
+      "type": [
+        "boolean",
+        "object"
+      ]
+    },
+    "quickSuggestionsDelay": {
+      "default": 10,
+      "description": "Quick suggestions show delay (in ms) Defaults to 10 (ms)",
+      "type": "number"
+    },
+    "readOnly": {
+      "default": false,
+      "description": "Should the editor be read only. See also domReadOnly. Defaults to false.",
+      "type": "boolean"
+    },
+    "renameOnType": {
+      "description": "deprecated, use linkedEditing instead.",
+      "type": "boolean"
+    },
+    "renderControlCharacters": {
+      "default": true,
+      "description": "Enable rendering of control characters. Defaults to true.",
+      "type": "boolean"
+    },
+    "renderFinalNewline": {
+      "default": "on",
+      "description": "Render last line number when the file ends with a newline. Defaults to 'on' for Windows and macOS and 'dimmed' for Linux.",
+      "enum": [
+        "on",
+        "off",
+        "dimmed"
+      ],
+      "type": "string"
+    },
+    "renderLineHighlight": {
+      "default": "all",
+      "description": "Enable rendering of current line highlight. Defaults to all.",
+      "enum": [
+        "all",
+        "line",
+        "none",
+        "gutter"
+      ],
+      "type": "string"
+    },
+    "renderLineHighlightOnlyWhenFocus": {
+      "default": false,
+      "description": "Control if the current line highlight should be rendered only the editor is focused. Defaults to false.",
+      "type": "boolean"
+    },
+    "renderValidationDecorations": {
+      "default": "editable",
+      "description": "Should the editor render validation decorations. Defaults to editable.",
+      "enum": [
+        "on",
+        "off",
+        "editable"
+      ],
+      "type": "string"
+    },
+    "renderWhitespace": {
+      "default": "selection",
+      "description": "Enable rendering of whitespace. Defaults to 'selection'.",
+      "enum": [
+        "all",
+        "none",
+        "boundary",
+        "selection",
+        "trailing"
+      ],
+      "type": "string"
+    },
+    "revealHorizontalRightPadding": {
+      "default": 30,
+      "description": "When revealing the cursor, a virtual padding (px) is added to the cursor, turning it into a rectangle. This virtual padding ensures that the cursor gets revealed before hitting the edge of the viewport. Defaults to 30 (px).",
+      "type": "number"
+    },
+    "roundedSelection": {
+      "default": true,
+      "description": "Render the editor selection with rounded borders. Defaults to true.",
+      "type": "boolean"
+    },
+    "rulers": {
+      "default": [],
+      "description": "Render vertical lines at the specified columns. Defaults to empty array.",
+      "type": "array"
+    },
+    "screenReaderAnnounceInlineSuggestion": {
+      "description": "Control whether a screen reader announces inline suggestion content immediately.",
+      "type": "boolean"
+    },
+    "scrollBeyondLastColumn": {
+      "default": 5,
+      "description": "Enable that scrolling can go beyond the last column by a number of columns. Defaults to 5.",
+      "type": "number"
+    },
+    "scrollBeyondLastLine": {
+      "default": true,
+      "description": "Enable that scrolling can go one screen size after the last line. Defaults to true.",
+      "type": "boolean"
+    },
+    "scrollPredominantAxis": {
+      "default": true,
+      "description": "Enable that the editor scrolls only the predominant axis. Prevents horizontal drift when scrolling vertically on a trackpad. Defaults to true.",
+      "type": "boolean"
+    },
+    "scrollbar": {
+      "description": "Control the behavior and rendering of the scrollbars.",
+      "properties": {
+        "alwaysConsumeMouseWheel": {
+          "default": true,
+          "description": "Always consume mouse wheel events (always call preventDefault() and stopPropagation() on the browser events). Defaults to true. NOTE: This option cannot be updated using updateOptions()",
+          "type": "boolean"
+        },
+        "arrowSize": {
+          "default": 11,
+          "description": "The size of arrows (if displayed). Defaults to 11. NOTE: This option cannot be updated using updateOptions()",
+          "type": "number"
+        },
+        "handleMouseWheel": {
+          "default": true,
+          "description": "Listen to mouse wheel events and react to them by scrolling. Defaults to true.",
+          "type": "boolean"
+        },
+        "horizontal": {
+          "default": "auto",
+          "description": "Render horizontal scrollbar. Defaults to 'auto'.",
+          "enum": [
+            "auto",
+            "visible",
+            "hidden"
+          ],
+          "type": "string"
+        },
+        "horizontalHasArrows": {
+          "default": false,
+          "description": "Render arrows at the left and right of the horizontal scrollbar. Defaults to false. NOTE: This option cannot be updated using updateOptions()",
+          "type": "boolean"
+        },
+        "horizontalScrollbarSize": {
+          "default": 10,
+          "description": "Height in pixels for the horizontal scrollbar. Defaults to 10 (px).",
+          "type": "number"
+        },
+        "horizontalSliderSize": {
+          "description": "Height in pixels for the horizontal slider. Defaults to horizontalScrollbarSize. NOTE: This option cannot be updated using updateOptions()",
+          "type": "number"
+        },
+        "scrollByPage": {
+          "default": false,
+          "description": "Scroll gutter clicks move by page vs jump to position. Defaults to false.",
+          "type": "boolean"
+        },
+        "useShadows": {
+          "default": true,
+          "description": "Cast horizontal and vertical shadows when the content is scrolled. Defaults to true. NOTE: This option cannot be updated using updateOptions()",
+          "type": "boolean"
+        },
+        "vertical": {
+          "default": "auto",
+          "description": "Render vertical scrollbar. Defaults to 'auto'.",
+          "enum": [
+            "auto",
+            "visible",
+            "hidden"
+          ],
+          "type": "string"
+        },
+        "verticalHasArrows": {
+          "default": false,
+          "description": "Render arrows at the top and bottom of the vertical scrollbar. Defaults to false. NOTE: This option cannot be updated using updateOptions()",
+          "type": "boolean"
+        },
+        "verticalScrollbarSize": {
+          "default": 10,
+          "description": "Width in pixels for the vertical scrollbar. Defaults to 10 (px).",
+          "type": "number"
+        },
+        "verticalSliderSize": {
+          "description": "Width in pixels for the vertical slider. Defaults to verticalScrollbarSize. NOTE: This option cannot be updated using updateOptions()",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "selectOnLineNumbers": {
+      "default": true,
+      "description": "Should the corresponding line be selected when clicking on the line number? Defaults to true.",
+      "type": "boolean"
+    },
+    "selectionClipboard": {
+      "default": true,
+      "description": "Enable Linux primary clipboard. Defaults to true.",
+      "type": "boolean"
+    },
+    "selectionHighlight": {
+      "default": true,
+      "description": "Enable selection highlight. Defaults to true.",
+      "type": "boolean"
+    },
+    "showDeprecated": {
+      "description": "Controls strikethrough deprecated variables.",
+      "type": "boolean"
+    },
+    "showFoldingControls": {
+      "default": "mouseover",
+      "description": "Controls whether the fold actions in the gutter stay always visible or hide unless the mouse is over the gutter. Defaults to 'mouseover'.",
+      "enum": [
+        "always",
+        "never",
+        "mouseover"
+      ],
+      "type": "string"
+    },
+    "showUnused": {
+      "description": "Controls fading out of unused variables.",
+      "type": "boolean"
+    },
+    "smartSelect": {
+      "description": "Smart select options.",
+      "properties": {
+        "selectLeadingAndTrailingWhitespace": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "smoothScrolling": {
+      "default": false,
+      "description": "Enable that the editor animates scrolling to a position. Defaults to false.",
+      "type": "boolean"
+    },
+    "snippetSuggestions": {
+      "default": true,
+      "description": "Enable snippet suggestions. Default to 'true'.",
+      "enum": [
+        true,
+        "none",
+        "top",
+        "bottom",
+        "inline"
+      ],
+      "type": [
+        "boolean",
+        "string"
+      ]
+    },
+    "stickyScroll": {
+      "description": "Control the behavior of sticky scroll options",
+      "properties": {
+        "defaultModel": {
+          "description": "Model to choose for sticky scroll by default",
+          "enum": [
+            "outlineModel",
+            "foldingProviderModel",
+            "indentationModel"
+          ],
+          "type": "string"
+        },
+        "enabled": {
+          "description": "Enable the sticky scroll",
+          "type": "boolean"
+        },
+        "maxLineCount": {
+          "description": "Maximum number of sticky lines to show",
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "stickyTabStops": {
+      "description": "Emulate selection behaviour of tab characters when using spaces for indentation. This means selection will stick to tab stops.",
+      "type": "boolean"
+    },
+    "stopRenderingLineAfter": {
+      "default": 10000,
+      "description": "Performance guard: Stop rendering a line after x characters. Defaults to 10000. Use -1 to never stop rendering",
+      "type": "number"
+    },
+    "suggest": {
+      "description": "Suggest options",
+      "properties": {
+        "filterGraceful": {
+          "default": true,
+          "description": "Enable graceful matching. Defaults to true.",
+          "type": "boolean"
+        },
+        "insertMode": {
+          "default": false,
+          "description": "Overwrite word ends on accept. Default to false.",
+          "enum": [
+            true,
+            false,
+            "insert",
+            "replace"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "localityBonus": {
+          "description": "Favors words that appear close to the cursor.",
+          "type": "boolean"
+        },
+        "matchOnWordStartOnly": {
+          "description": "Controls whether suggestions allow matches in the middle of the word instead of only at the beginning.",
+          "type": "boolean"
+        },
+        "preview": {
+          "description": "Enable or disable the rendering of the suggestion preview.",
+          "type": "boolean"
+        },
+        "previewMode": {
+          "description": "Configures the mode of the preview.",
+          "enum": [
+            "prefix",
+            "subword",
+            "subwordSmart"
+          ],
+          "type": "string"
+        },
+        "selectionMode": {
+          "description": "Select suggestions when triggered via quick suggest or trigger characters.",
+          "enum": [
+            "always",
+            "never",
+            "whenTriggerCharacter",
+            "whenQuickSuggestion"
+          ],
+          "type": "string"
+        },
+        "shareSuggestSelections": {
+          "description": "Enable using global storage for remembering suggestions.",
+          "type": "boolean"
+        },
+        "showClasses": {
+          "description": "Show class-suggestions.",
+          "type": "boolean"
+        },
+        "showColors": {
+          "description": "Show color-suggestions.",
+          "type": "boolean"
+        },
+        "showConstants": {
+          "description": "Show constant-suggestions.",
+          "type": "boolean"
+        },
+        "showConstructors": {
+          "description": "Show constructor-suggestions.",
+          "type": "boolean"
+        },
+        "showDeprecated": {
+          "description": "Show deprecated-suggestions.",
+          "type": "boolean"
+        },
+        "showEnumMembers": {
+          "description": "Show enumMember-suggestions.",
+          "type": "boolean"
+        },
+        "showEnums": {
+          "description": "Show enum-suggestions.",
+          "type": "boolean"
+        },
+        "showEvents": {
+          "description": "Show event-suggestions.",
+          "type": "boolean"
+        },
+        "showFields": {
+          "description": "Show field-suggestions.",
+          "type": "boolean"
+        },
+        "showFiles": {
+          "description": "Show file-suggestions.",
+          "type": "boolean"
+        },
+        "showFolders": {
+          "description": "Show folder-suggestions.",
+          "type": "boolean"
+        },
+        "showFunctions": {
+          "description": "Show function-suggestions.",
+          "type": "boolean"
+        },
+        "showIcons": {
+          "default": true,
+          "description": "Enable or disable icons in suggestions. Defaults to true.",
+          "type": "boolean"
+        },
+        "showInlineDetails": {
+          "default": true,
+          "description": "Show details inline with the label. Defaults to true.",
+          "type": "boolean"
+        },
+        "showInterfaces": {
+          "description": "Show interface-suggestions.",
+          "type": "boolean"
+        },
+        "showIssues": {
+          "description": "Show issue-suggestions.",
+          "type": "boolean"
+        },
+        "showKeywords": {
+          "description": "Show keyword-suggestions.",
+          "type": "boolean"
+        },
+        "showMethods": {
+          "description": "Show method-suggestions.",
+          "type": "boolean"
+        },
+        "showModules": {
+          "description": "Show module-suggestions.",
+          "type": "boolean"
+        },
+        "showOperators": {
+          "description": "Show operator-suggestions.",
+          "type": "boolean"
+        },
+        "showProperties": {
+          "description": "Show property-suggestions.",
+          "type": "boolean"
+        },
+        "showReferences": {
+          "description": "Show reference-suggestions.",
+          "type": "boolean"
+        },
+        "showSnippets": {
+          "description": "Show snippet-suggestions.",
+          "type": "boolean"
+        },
+        "showStatusBar": {
+          "description": "Enable or disable the suggest status bar.",
+          "type": "boolean"
+        },
+        "showStructs": {
+          "description": "Show struct-suggestions.",
+          "type": "boolean"
+        },
+        "showTypeParameters": {
+          "description": "Show typeParameter-suggestions.",
+          "type": "boolean"
+        },
+        "showUnits": {
+          "description": "Show unit-suggestions.",
+          "type": "boolean"
+        },
+        "showUsers": {
+          "description": "Show user-suggestions.",
+          "type": "boolean"
+        },
+        "showValues": {
+          "description": "Show value-suggestions.",
+          "type": "boolean"
+        },
+        "showVariables": {
+          "description": "Show variable-suggestions.",
+          "type": "boolean"
+        },
+        "showWords": {
+          "description": "Show text-suggestions.",
+          "type": "boolean"
+        },
+        "snippetsPreventQuickSuggestions": {
+          "default": true,
+          "description": "Prevent quick suggestions when a snippet is active. Defaults to true.",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "suggestFontSize": {
+      "description": "The font size for the suggest widget. Defaults to the editor font size.",
+      "type": "number"
+    },
+    "suggestLineHeight": {
+      "description": "The line height for the suggest widget. Defaults to the editor line height.",
+      "type": "number"
+    },
+    "suggestOnTriggerCharacters": {
+      "default": true,
+      "description": "Enable the suggestion box to pop-up on trigger characters. Defaults to true.",
+      "type": "boolean"
+    },
+    "suggestSelection": {
+      "description": "The history mode for suggestions.",
+      "enum": [
+        "first",
+        "recentlyUsed",
+        "recentlyUsedByPrefix"
+      ],
+      "type": "string"
+    },
+    "tabCompletion": {
+      "description": "Enable tab completion.",
+      "enum": [
+        "on",
+        "off",
+        "onlySnippets"
+      ],
+      "type": "string"
+    },
+    "tabFocusMode": {
+      "description": "Controls whether the editor receives tabs or defers them to the workbench for navigation.",
+      "type": "boolean"
+    },
+    "tabIndex": {
+      "description": "The tabindex property of the editor's textarea.",
+      "type": "number"
+    },
+    "unfoldOnClickAfterEndOfLine": {
+      "default": false,
+      "description": "Controls whether clicking on the empty content after a folded line will unfold the line. Defaults to false.",
+      "type": "boolean"
+    },
+    "unicodeHighlight": {
+      "description": "Controls the behavior of the unicode highlight feature (by default, ambiguous and invisible characters are highlighted).",
+      "properties": {
+        "allowedCharacters": {
+          "description": "Defines allowed characters that are not being highlighted.",
+          "type": "object"
+        },
+        "allowedLocales": {
+          "description": "Unicode characters that are common in allowed locales are not being highlighted.",
+          "type": "object"
+        },
+        "ambiguousCharacters": {
+          "description": "Controls whether characters are highlighted that can be confused with basic ASCII characters, except those that are common in the current user locale.",
+          "type": "object"
+        },
+        "includeComments": {
+          "description": "Controls whether characters in comments should also be subject to unicode highlighting.",
+          "enum": [
+            true,
+            false,
+            "inUntrustedWorkspace"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "includeStrings": {
+          "description": "Controls whether characters in strings should also be subject to unicode highlighting.",
+          "enum": [
+            true,
+            false,
+            "inUntrustedWorkspace"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "invisibleCharacters": {
+          "description": "Controls whether characters that just reserve space or have no width at all are highlighted.",
+          "type": "boolean"
+        },
+        "nonBasicASCII": {
+          "description": "Controls whether all non-basic ASCII characters are highlighted. Only characters between U+0020 and U+007E, tab, line-feed and carriage-return are considered basic ASCII.",
+          "enum": [
+            true,
+            false,
+            "inUntrustedWorkspace"
+          ],
+          "type": [
+            "boolean",
+            "string"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "unusualLineTerminators": {
+      "default": "prompt",
+      "description": "Remove unusual line terminators like LINE SEPARATOR (LS), PARAGRAPH SEPARATOR (PS). Defaults to 'prompt'.",
+      "enum": [
+        "off",
+        "auto",
+        "prompt"
+      ],
+      "type": "string"
+    },
+    "useShadowDOM": {
+      "description": "Control if the editor should use shadow DOM.",
+      "type": "boolean"
+    },
+    "useTabStops": {
+      "description": "Inserting and deleting whitespace follows tab stops.",
+      "type": "boolean"
+    },
+    "wordBreak": {
+      "default": "normal",
+      "description": "Sets whether line breaks appear wherever the text would otherwise overflow its content box. When wordBreak = 'normal', Use the default line break rule. When wordBreak = 'keepAll', Word breaks should not be used for Chinese/Japanese/Korean (CJK) text. Non-CJK text behavior is the same as for normal.",
+      "enum": [
+        "normal",
+        "keepAll"
+      ],
+      "type": "string"
+    },
+    "wordSeparators": {
+      "default": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+      "description": "A string containing the word separators used when doing word navigation. Defaults to `~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+      "type": "string"
+    },
+    "wordWrap": {
+      "default": "off",
+      "description": "Control the wrapping of the editor. When wordWrap = \"off\", the lines will never wrap. When wordWrap = \"on\", the lines will wrap at the viewport width. When wordWrap = \"wordWrapColumn\", the lines will wrap at wordWrapColumn. When wordWrap = \"bounded\", the lines will wrap at min(viewport width, wordWrapColumn). Defaults to \"off\".",
+      "enum": [
+        "on",
+        "off",
+        "wordWrapColumn",
+        "bounded"
+      ],
+      "type": "string"
+    },
+    "wordWrapBreakAfterCharacters": {
+      "description": "Configure word wrapping characters. A break will be introduced before these characters.",
+      "type": "string"
+    },
+    "wordWrapBreakBeforeCharacters": {
+      "description": "Configure word wrapping characters. A break will be introduced before these characters.",
+      "type": "string"
+    },
+    "wordWrapColumn": {
+      "default": 80,
+      "description": "Control the wrapping of the editor. When wordWrap = \"off\", the lines will never wrap. When wordWrap = \"on\", the lines will wrap at the viewport width. When wordWrap = \"wordWrapColumn\", the lines will wrap at wordWrapColumn. When wordWrap = \"bounded\", the lines will wrap at min(viewport width, wordWrapColumn). Defaults to 80.",
+      "type": "number"
+    },
+    "wordWrapOverride1": {
+      "description": "Override the wordWrap setting.",
+      "enum": [
+        "on",
+        "off",
+        "inherit"
+      ],
+      "type": "string"
+    },
+    "wordWrapOverride2": {
+      "description": "Override the wordWrapOverride1 setting.",
+      "enum": [
+        "on",
+        "off",
+        "inherit"
+      ],
+      "type": "string"
+    },
+    "wrappingIndent": {
+      "default": "none",
+      "description": "Control indentation of wrapped lines. Can be: 'none', 'same', 'indent' or 'deepIndent'. Defaults to 'same' in vscode and to 'none' in monaco-editor.",
+      "enum": [
+        "none",
+        "same",
+        "indent",
+        "deepIndent"
+      ],
+      "type": "string"
+    },
+    "wrappingStrategy": {
+      "default": "simple",
+      "description": "Control indentation of wrapped lines. Can be: 'none', 'same', 'indent' or 'deepIndent'. Defaults to 'same' in vscode and to 'none' in monaco-editor.",
+      "enum": [
+        "simple",
+        "advanced"
+      ],
+      "type": "string"
+    }
+  }
+}

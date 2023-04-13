@@ -74,6 +74,11 @@ class Code extends Field implements PreviewableFieldInterface
     public bool $showLanguageDropdown = true;
 
     /**
+     * @var string The default value the Code Field will be populated with
+     */
+    public string $defaultValue = '';
+
+    /**
      * @var array The languages that should be listed in the language selector dropdown menu.
      */
     public array $availableLanguages = [
@@ -90,6 +95,11 @@ class Code extends Field implements PreviewableFieldInterface
         'typescript',
         'yaml',
     ];
+
+    /**
+     * @var string|null The type of database column the field should have in the content table
+     */
+    public ?string $columnType = Schema::TYPE_TEXT;
 
     /**
      * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings
@@ -120,7 +130,7 @@ class Code extends Field implements PreviewableFieldInterface
         }
         // Default config
         $config = [
-            'value' => '',
+            'value' => $this->defaultValue,
             'language' => $this->language,
         ];
         // Handle incoming values potentially being JSON or an array
@@ -158,12 +168,15 @@ class Code extends Field implements PreviewableFieldInterface
     public function getSettingsHtml(): ?string
     {
         $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
+        $schemaFilePath = Craft::getAlias('@nystudio107/codefield/resources/IEditorOptionsSchema.json');
+        $optionsSchema = @file_get_contents($schemaFilePath) ?: '';
         // Render the settings template
         return Craft::$app->getView()->renderTemplate(
             'codefield/_components/fields/Code_settings',
             [
                 'field' => $this,
                 'monacoLanguages' => $monacoLanguages,
+                'optionsSchema' => $optionsSchema,
             ]
         );
     }
@@ -247,6 +260,10 @@ class Code extends Field implements PreviewableFieldInterface
      */
     public function getContentColumnType(): string
     {
+        if ($this->columnType) {
+            return $this->columnType;
+        }
+
         return Schema::TYPE_TEXT;
     }
 }

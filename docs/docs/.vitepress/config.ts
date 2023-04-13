@@ -18,7 +18,7 @@ export default defineConfig({
     ],
     logo: '/img/plugin-logo.svg',
     editLink: {
-      pattern: 'https://github.com/nystudio107/craft-code-field/edit/develop-v3/docs/docs/:path',
+      pattern: 'https://github.com/nystudio107/craft-code-field/edit/develop-v4/docs/docs/:path',
       text: 'Edit this page on GitHub'
     },
     algolia: {
@@ -33,6 +33,12 @@ export default defineConfig({
       {text: 'Store', link: 'https://plugins.craftcms.com/codefield'},
       {text: 'Changelog', link: 'https://nystudio107.com/plugins/code-field/changelog'},
       {text: 'Issues', link: 'https://github.com/nystudio107/craft-code-field/issues'},
+      {
+        text: 'v4', items: [
+          {text: 'v4', link: '/'},
+          {text: 'v3', link: 'https://nystudio107.com/docs/codefield/v3/'},
+        ],
+      },
     ]
   },
 });

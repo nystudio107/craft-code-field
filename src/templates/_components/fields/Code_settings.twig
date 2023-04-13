@@ -115,6 +115,15 @@
     errors: field.getErrors("showLanguageDropdown")
 }) }}
 
+{{ codeEditor.textAreaField({
+    label: "Default Value"|t("codefield"),
+    instructions: "The default value the Code Field will be populated with."|t("codefield"),
+    id: "defaultValue",
+    name: "defaultValue",
+    value: field.defaultValue,
+    errors: field.getErrors("defaultValue")
+}, "CodeField", {language: field.language}, {wrapperClass: "monaco-editor-background-frame"}) }}
+
 <hr>
 
 <a class="fieldtoggle" data-target="availableLanguagesListWrapper">{{ "Available Languages"|t("codefield") }}</a>
@@ -131,14 +140,45 @@
     }) }}
 </div>
 
+<hr>
 <a class="fieldtoggle" data-target="advanced">{{ "Advanced"|t("app") }}</a>
 <div id="advanced" class="{% if not field.getErrors("monacoEditorOptions") %}hidden{% endif %}">
+    {% if craft.app.db.isMysql %}
+        {{ forms.selectField({
+            label: "Column Type"|t('app'),
+            id: 'column-type',
+            name: 'columnType',
+            instructions: "The type of column this field should get in the database."|t('app'),
+            options: [
+                { value: 'text', label: 'text (~64KB)' },
+                { value: 'mediumtext', label: 'mediumtext (~16MB)' },
+            ],
+            value: field.columnType ?? 'auto',
+            warning: (field.id ? "Changing this may result in data loss."|t('app')),
+        }) }}
+    {% endif %}
+
     {{ codeEditor.textAreaField({
         label: "Monaco Editor Settings Override"|t("codefield"),
-        instructions: "JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings."|t("codefield"),
+        instructions: "JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) that will override the default settings."|t("codefield"),
         id: "monacoEditorOptions",
         name: "monacoEditorOptions",
         value: field.monacoEditorOptions,
         errors: field.getErrors("monacoEditorOptions")
     }, "CodeField", {language: "json"}, {wrapperClass: "monaco-editor-background-frame"}) }}
 </div>
+
+{% js %}
+// Add schema definitions for this JSON editor field
+var jsonSchemaUri = 'https://craft-code-editor.com/{{ "monacoEditorOptions"|namespaceInputId }}';
+var jsonSchema = {
+  uri: jsonSchemaUri,
+  fileMatch: [jsonSchemaUri],
+  schema: {{ optionsSchema | raw }}
+}
+// configure the JSON language support with schemas and schema associations
+monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+  validate: true,
+  schemas: [jsonSchema]
+});
+{% endjs %}
