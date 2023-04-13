@@ -85,6 +85,8 @@ This allows you to override any of the Monaco [EditorOptions](https://microsoft.
 
 Using this, you can control every aspect of the Code Field editor.
 
+This field uses a Code Editor field itself, with a JSON schema for the Monaco [`IEditorOptions`](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html), so you get autocomplete and hovers here, too!
+
 ## Converting Existing Fields
 
 You can convert existing Craft CMS [Plain Text](https://craftcms.com/docs/4.x/plain-text-fields.html) fields, [Code Mirror](https://plugins.craftcms.com/code-mirror) fields, [Simple Text](https://plugins.craftcms.com/simple-text) fields, or other text/code fields to Code Field fields just by changing the field type to **Code**.
