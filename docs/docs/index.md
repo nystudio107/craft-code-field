@@ -64,6 +64,7 @@ You can configure each field with its own discrete settings:
 * **Code Folding** - Whether code folding controls should be displayed in the Code Field editor margins.
 * **Placeholder Text** - The text that will be shown if the Code Field is empty.
 * **Show Language Dropdown with Field** - Whether content authors should have a Language dropdown menu available to them under the Code Field editor when editing an entry.
+* **Default Value** - The default value the Code Field will be populated with.
 
 ### Available Languages
 
