@@ -18,7 +18,7 @@ export default defineConfig({
     ],
     logo: '/img/plugin-logo.svg',
     editLink: {
-      pattern: 'https://github.com/nystudio107/craft-code-field/edit/develop-v3/docs/docs/:path',
+      pattern: 'https://github.com/nystudio107/craft-code-field/edit/develop-v4/docs/docs/:path',
       text: 'Edit this page on GitHub'
     },
     algolia: {
