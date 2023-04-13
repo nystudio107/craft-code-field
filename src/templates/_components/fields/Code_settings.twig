@@ -115,6 +115,15 @@
     errors: field.getErrors("showLanguageDropdown")
 }) }}
 
+{{ codeEditor.textAreaField({
+    label: "Default Value"|t("codefield"),
+    instructions: "The default value the Code Field will be populated with."|t("codefield"),
+    id: "defaultValue",
+    name: "defaultValue",
+    value: field.defaultValue,
+    errors: field.getErrors("defaultValue")
+}, "CodeField", {language: field.language}, {wrapperClass: "monaco-editor-background-frame"}) }}
+
 <hr>
 
 <a class="fieldtoggle" data-target="availableLanguagesListWrapper">{{ "Available Languages"|t("codefield") }}</a>

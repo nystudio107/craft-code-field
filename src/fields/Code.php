@@ -67,6 +67,11 @@ class Code extends Field implements PreviewableFieldInterface
     public $placeholder = '';
 
     /**
+     * @var string The default value the Code Field will be populated with
+     */
+    public $defaultValue = '';
+
+    /**
      * @var bool Whether the language selector dropdown menu should be displayed.
      */
     public $showLanguageDropdown = true;
@@ -123,7 +128,7 @@ class Code extends Field implements PreviewableFieldInterface
         }
         // Default config
         $config = [
-            'value' => '',
+            'value' => $this->defaultValue,
             'language' => $this->language,
         ];
         // Handle incoming values potentially being JSON or an array

@@ -41,5 +41,6 @@ return [
     'CodeData failed validation: ' => 'CodeData failed validation: ',
     'Default Value' => 'Default Value',
     'The default value of the Code Field.' => 'The default value of the Code Field.',
-    'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) that will override the default settings.'
+    'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) that will override the default settings.' => 'JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/typedoc/interfaces/editor.IEditorOptions.html) that will override the default settings.',
+    'The default value the Code Field will be populated with.' => 'The default value the Code Field will be populated with.'
 ];
