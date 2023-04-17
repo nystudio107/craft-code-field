@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.10 - UNRELEASED
+### Changed
+* Clean up `IEditorOptionsSchema.json` to handle `<Record>` types and refactor `GoToLocationValues` to `$def`
+
 ## 4.0.9 - 2023.04.16
 ### Changed
 * Refactor the `IEditorOptionsSchema.json` to use [`$defs`](https://json-schema.org/understanding-json-schema/structuring.html#defs) to make the JSON schema more structured/reusable
