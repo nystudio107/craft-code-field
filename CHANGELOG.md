@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.9 - 2023.04.16
+### Changed
+* Refactor the `IEditorOptionsSchema.json` to use [`$defs`](https://json-schema.org/understanding-json-schema/structuring.html#defs) to make the JSON schema more structured/reusable
+
 ## 4.0.8 - 2023.04.13
 ### Added
 * Allow you to choose `text` or `mediumtext` for the content column storage for Code Editor fields (under Advanced Settings) ([#6](https://github.com/nystudio107/craft-code-field/issues/6))
