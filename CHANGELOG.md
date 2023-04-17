@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file
 
-## 3.0.9 - UNRELEASED
+## 3.0.9 - 2023.04.16
 ### Changed
 * Refactor the `IEditorOptionsSchema.json` to use [`$defs`](https://json-schema.org/understanding-json-schema/structuring.html#defs) to make the JSON schema more structured/reusable
 
