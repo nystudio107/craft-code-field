@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## 4.0.10 - UNRELEASED
 ### Changed
 * Clean up `IEditorOptionsSchema.json` to handle `<Record>` types and refactor `GoToLocationValues` to `$def`
+* Automate release generation via GitHub action
 
 ## 4.0.9 - 2023.04.16
 ### Changed
