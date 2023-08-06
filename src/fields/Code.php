@@ -208,6 +208,10 @@ class Code extends Field implements PreviewableFieldInterface
             $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
             $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
             $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
+            // Handle "all" checkbox
+            if ($this->availableLanguages[0] === '*') {
+                $displayLanguages = $decomposedLanguages;
+            }
             $displayLanguages = array_map(static function ($k, $v) {
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));
