@@ -120,10 +120,11 @@ class Code extends Field implements PreviewableFieldInterface
     // Public Methods
     // =========================================================================
 
+
     /**
      * @inheritdoc
      */
-    public function normalizeValue($value, ElementInterface $element = null): mixed
+    public function normalizeValue(mixed $value, ?ElementInterface $element = null): mixed
     {
         if ($value instanceof CodeData) {
             return $value;
