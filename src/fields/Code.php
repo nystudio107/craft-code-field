@@ -139,8 +139,19 @@ class Code extends Field implements PreviewableFieldInterface
                 // If this is still a string (meaning it's not valid JSON), treat it as the value
                 if (\is_string($jsonValue)) {
                     $config['value'] = $jsonValue;
-                } else {
-                    $value = $jsonValue;
+                }
+                if (\is_array($jsonValue)) {
+                    // Check to make sure the array returned is an encoded `CodeData` config, with exactly
+                    // the same expected key/value pairs
+                    if (!array_diff_key($config, $jsonValue) && !array_diff_key($jsonValue, $config)) {
+                        $value = $jsonValue;
+                    } else {
+                        // Otherwise treat it as JSON data
+                        $value = [
+                            'value' => $value,
+                            'language' => 'json',
+                        ];
+                    }
                 }
             }
             if (\is_array($value)) {
@@ -194,6 +205,10 @@ class Code extends Field implements PreviewableFieldInterface
             $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
             $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
             $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
+            // Handle "all" checkbox
+            if ($this->availableLanguages[0] === '*') {
+                $displayLanguages = $decomposedLanguages;
+            }
             $displayLanguages = array_map(function ($k, $v) {
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));

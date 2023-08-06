@@ -910,55 +910,33 @@
           "type": "string"
         },
         "multiple": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         },
         "multipleDeclarations": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         },
         "multipleDefinitions": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         },
         "multipleImplementations": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         },
         "multipleReferences": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         },
         "multipleTypeDefinitions": {
-          "enum": [
-            "peek",
-            "gotoAndPeek",
-            "goto"
-          ],
-          "type": "string"
+          "$ref": "#/$defs/GoToLocationValues"
         }
       },
       "type": "object"
+    },
+    "GoToLocationValues": {
+      "enum": [
+        "peek",
+        "gotoAndPeek",
+        "goto"
+      ],
+      "type": "string"
     },
     "IGuidesOptions": {
       "description": "Controls the behavior of editor guides.",
@@ -1566,10 +1544,22 @@
       "description": "Controls the behavior of the unicode highlight feature (by default, ambiguous and invisible characters are highlighted).",
       "properties": {
         "allowedCharacters": {
+          "additionalProperties": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
           "description": "Defines allowed characters that are not being highlighted.",
           "type": "object"
         },
         "allowedLocales": {
+          "additionalProperties": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
           "description": "Unicode characters that are common in allowed locales are not being highlighted.",
           "type": "object"
         },
