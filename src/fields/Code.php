@@ -142,8 +142,19 @@ class Code extends Field implements PreviewableFieldInterface
                 // If this is still a string (meaning it's not valid JSON), treat it as the value
                 if (\is_string($jsonValue)) {
                     $config['value'] = $jsonValue;
-                } else {
-                    $value = $jsonValue;
+                }
+                if (\is_array($jsonValue)) {
+                    // Check to make sure the array returned is an encoded `CodeData` config, with exactly
+                    // the same expected key/value pairs
+                    if (!array_diff_key($config, $jsonValue) && !array_diff_key($jsonValue, $config)) {
+                        $value = $jsonValue;
+                    } else {
+                        // Otherwise treat it as JSON data
+                        $value = [
+                            'value' => $value,
+                            'language' => 'json',
+                        ];
+                    }
                 }
             }
             if (\is_array($value)) {
