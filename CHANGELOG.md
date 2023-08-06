@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 4.0.10 - 2023.08.06
+### Changed
+* Clean up `IEditorOptionsSchema.json` to handle `<Record>` types and refactor `GoToLocationValues` to `$def`
+* Automate release generation via GitHub action
+
+### Fixed
+* Fixed method signature for `normalizeValue()` ([#11](https://github.com/nystudio107/craft-code-field/issues/11))
+* Handle the case where an existing field is being converted over to a Code Field, and it contains JSON data ([#11](https://github.com/nystudio107/craft-code-field/issues/11))
+* Fixed an issue that would cause the **All** checkbox for the **Available Languages** field setting to not display the language dropdown ([#9](https://github.com/nystudio107/craft-code-field/issues/9))
+
 ## 4.0.9 - 2023.04.16
 ### Changed
 * Refactor the `IEditorOptionsSchema.json` to use [`$defs`](https://json-schema.org/understanding-json-schema/structuring.html#defs) to make the JSON schema more structured/reusable
