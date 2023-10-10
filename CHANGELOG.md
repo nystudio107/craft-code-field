@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.11 - 2023.10.09
+### Changed
+* Ensure that the code field is rendered as formatted (but read-only) code when viewing a revision ([#12](https://github.com/nystudio107/craft-code-field/issues/12))
+
 ## 3.0.10 - 2023.08.06
 ### Changed
 * Clean up `IEditorOptionsSchema.json` to handle `<Record>` types and refactor `GoToLocationValues` to `$def`
