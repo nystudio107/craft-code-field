@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## 4.0.11 - UNRELEASED
+## 4.0.11 - 2023.10.09
 ### Changed
 * Ensure that the code field is rendered as formatted (but read-only) code when viewing a revision ([#12](https://github.com/nystudio107/craft-code-field/issues/12))
 
