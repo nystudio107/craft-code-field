@@ -120,7 +120,6 @@ class Code extends Field implements PreviewableFieldInterface
     // Public Methods
     // =========================================================================
 
-
     /**
      * @inheritdoc
      */
@@ -198,41 +197,24 @@ class Code extends Field implements PreviewableFieldInterface
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
-        // Get our id and namespace
-        $id = Html::id($this->handle);
-        $namespacedId = Craft::$app->getView()->namespaceInputId($id);
-
-        // Extract just the languages that have been selected for display
-        $displayLanguages = [];
-        if ($this->showLanguageDropdown) {
-            $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
-            $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
-            $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
-            // Handle "all" checkbox
-            if ($this->availableLanguages[0] === '*') {
-                $displayLanguages = $decomposedLanguages;
-            }
-            $displayLanguages = array_map(static function ($k, $v) {
-                return ['value' => $k, 'label' => $v];
-            }, array_keys($displayLanguages), array_values($displayLanguages));
-        }
-        $monacoOptionsOverride = Json::decodeIfJson($this->monacoEditorOptions);
-        if ($monacoOptionsOverride === null || is_string($monacoOptionsOverride)) {
-            $monacoOptionsOverride = [];
-        }
+        $twigVariables = $this->getFieldRenderVariables($value, $element, true);
         // Render the input template
         return Craft::$app->getView()->renderTemplate(
             'codefield/_components/fields/Code_input',
-            [
-                'name' => $this->handle,
-                'value' => $value,
-                'field' => $this,
-                'orientation' => $this->getOrientation($element),
-                'id' => $id,
-                'namespacedId' => $namespacedId,
-                'displayLanguages' => $displayLanguages,
-                'monacoOptionsOverride' => $monacoOptionsOverride,
-            ]
+            $twigVariables
+        );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getStaticHtml(mixed $value, ElementInterface $element): string
+    {
+        $twigVariables = $this->getFieldRenderVariables($value, $element, false);
+        // Render the input template
+        return Craft::$app->getView()->renderTemplate(
+            'codefield/_components/fields/Code_input',
+            $twigVariables
         );
     }
 
@@ -281,5 +263,57 @@ class Code extends Field implements PreviewableFieldInterface
         }
 
         return Schema::TYPE_TEXT;
+    }
+
+    // Protected Methods
+    // =========================================================================
+
+    /**
+     * Return the Twig variables for rendering the field
+     *
+     * @param $value
+     * @param ElementInterface $element
+     * @param bool $enabled Whether the field is enabled or not
+     * @return array[]
+     */
+    protected function getFieldRenderVariables($value, ElementInterface $element, bool $enabled): array
+    {
+        // Get our id and namespace
+        $id = Html::id($this->handle);
+        $namespacedId = Craft::$app->getView()->namespaceInputId($id);
+
+        // Extract just the languages that have been selected for display
+        $displayLanguages = [];
+        if ($this->showLanguageDropdown) {
+            $monacoLanguages = require(__DIR__ . '/MonacoLanguages.php');
+            $decomposedLanguages = array_column($monacoLanguages, 'label', 'value');
+            $displayLanguages = array_intersect_key($decomposedLanguages, array_flip($this->availableLanguages));
+            // Handle "all" checkbox
+            if ($this->availableLanguages[0] === '*') {
+                $displayLanguages = $decomposedLanguages;
+            }
+            $displayLanguages = array_map(static function ($k, $v) {
+                return ['value' => $k, 'label' => $v];
+            }, array_keys($displayLanguages), array_values($displayLanguages));
+        }
+        $monacoOptionsOverride = Json::decodeIfJson($this->monacoEditorOptions);
+        if ($monacoOptionsOverride === null || is_string($monacoOptionsOverride)) {
+            $monacoOptionsOverride = [];
+        }
+        // Disable the Monaco editor
+        if (!$enabled) {
+            $monacoOptionsOverride['domReadOnly'] = true;
+            $monacoOptionsOverride['readOnly'] = true;
+        }
+        return [
+            'name' => $this->handle,
+            'value' => $value,
+            'field' => $this,
+            'orientation' => $this->getOrientation($element),
+            'id' => $id,
+            'namespacedId' => $namespacedId,
+            'displayLanguages' => $displayLanguages,
+            'monacoOptionsOverride' => $monacoOptionsOverride,
+        ];
     }
 }
