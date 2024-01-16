@@ -36,8 +36,8 @@ export default defineConfig({
       {
         text: 'v5', items: [
           {text: 'v5', link: '/'},
-          {text: 'v4', link: 'https://nystudio107.com/docs/codefield/v4/'},
-          {text: 'v3', link: 'https://nystudio107.com/docs/codefield/v3/'},
+          {text: 'v4', link: 'https://nystudio107.com/docs/code-field/v4/'},
+          {text: 'v3', link: 'https://nystudio107.com/docs/code-field/v3/'},
         ],
       },
     ]
