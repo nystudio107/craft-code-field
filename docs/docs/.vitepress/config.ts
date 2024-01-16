@@ -35,7 +35,8 @@ export default defineConfig({
       {text: 'Issues', link: 'https://github.com/nystudio107/craft-code-field/issues'},
       {
         text: 'v3', items: [
-          {text: 'v4', link: 'https://nystudio107.com/docs/seomatic/'},
+          {text: 'v5', link: 'https://nystudio107.com/docs/code-field/'},
+          {text: 'v4', link: 'https://nystudio107.com/docs/code-field/v4/'},
           {text: 'v3', link: '/'},
         ],
       },
