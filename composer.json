@@ -41,7 +41,7 @@
   "extra": {
     "name": "Code Field",
     "handle": "codefield",
-    "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-code-field/v3/CHANGELOG.md",
+    "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-code-field/v5/CHANGELOG.md",
     "class": "nystudio107\\codefield\\CodeField"
   }
 }
