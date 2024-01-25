@@ -4,7 +4,7 @@ sidebar: false
 
 description: Documentation for the Code Field plugin.  The Code Field plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
 ---
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=develop-v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v5) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=develop-v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v5) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=develop-v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/develop-v5) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=develop-v5)](https://scrutinizer-ci.com/code-intelligence)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=v5) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=v5) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=v5)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/v5) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=v5)](https://scrutinizer-ci.com/code-intelligence)
 
 # Code Field plugin for Craft CMS
 
