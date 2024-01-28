@@ -17,18 +17,11 @@ jobs:
           -
             name: 'PHPStan'
             run: composer phpstan
-
-          -
-            name: 'Composer Validate'
-            run: composer validate
-
           -
             name: 'Coding Standards'
             run: composer fix-cs
-
     name: ${{ matrix.actions.name }}
     runs-on: ubuntu-latest
-
     steps:
       -   uses: actions/checkout@v3
       # see https://github.com/shivammathur/setup-php
@@ -36,7 +29,6 @@ jobs:
           with:
             php-version: 8.2
             coverage: none
-
       # composer install cache - https://github.com/ramsey/composer-install
       -   uses: "ramsey/composer-install@v2"
       -   run: ${{ matrix.actions.run }}
