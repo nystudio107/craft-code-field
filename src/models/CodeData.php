@@ -10,7 +10,6 @@
 
 namespace nystudio107\codefield\models;
 
-
 use craft\base\Model;
 
 /**
