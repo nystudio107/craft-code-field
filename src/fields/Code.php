@@ -30,6 +30,17 @@ use yii\db\Schema;
  */
 class Code extends Field implements PreviewableFieldInterface
 {
+    // Constants
+    // =========================================================================
+
+    /**
+     * Properties that are no longer used, but may still be passed into the $config
+     * via __construct() that we should remove to avoid throwing an exception
+     */
+    protected const DEPRECATED_PROPERTIES = [
+        'columnType'
+    ];
+
     // Public Properties
     // =========================================================================
 
@@ -97,17 +108,20 @@ class Code extends Field implements PreviewableFieldInterface
     ];
 
     /**
-     * @var string|null The type of database column the field should have in the content table
-     */
-    public ?string $columnType = Schema::TYPE_TEXT;
-
-    /**
      * @var string JSON blob of Monaco [EditorOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.IEditorOptions.html) that will override the default settings
      */
     public string $monacoEditorOptions = '';
 
     // Static Methods
     // =========================================================================
+
+    /**
+     * @inheritdoc
+     */
+    public static function dbType(): array|string|null
+    {
+        return Schema::TYPE_TEXT;
+    }
 
     /**
      * @inheritdoc
@@ -119,6 +133,18 @@ class Code extends Field implements PreviewableFieldInterface
 
     // Public Methods
     // =========================================================================
+
+    /**
+     * @inheritdoc
+     */
+    public function __construct(array $config = [])
+    {
+        // Unset any deprecated properties
+        foreach(self::DEPRECATED_PROPERTIES as $deprecatedProperty) {
+            unset($config[$deprecatedProperty]);
+        }
+        parent::__construct($config);
+    }
 
     /**
      * @inheritdoc
@@ -253,18 +279,6 @@ class Code extends Field implements PreviewableFieldInterface
         ]);
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function getContentColumnType(): string
-    {
-        if ($this->columnType) {
-            return $this->columnType;
-        }
-
-        return Schema::TYPE_TEXT;
-    }
-
     // Protected Methods
     // =========================================================================
 
@@ -292,7 +306,7 @@ class Code extends Field implements PreviewableFieldInterface
             if ($this->availableLanguages[0] === '*') {
                 $displayLanguages = $decomposedLanguages;
             }
-            $displayLanguages = array_map(static function ($k, $v) {
+            $displayLanguages = array_map(static function($k, $v) {
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));
         }
