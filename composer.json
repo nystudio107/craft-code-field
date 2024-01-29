@@ -26,7 +26,6 @@
     "nystudio107/craft-code-editor": "^1.0.14"
   },
   "require-dev": {
-    "craftcms/cms": "^5.0.0-alpha.1",
     "craftcms/ecs": "dev-main",
     "craftcms/phpstan": "dev-main",
     "craftcms/rector": "dev-main"
