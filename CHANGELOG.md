@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file
 
+## 3.0.13 - UNRELEASED
+### Added
+* Add `phpstan` and `ecs` code linting
+* Add `code-analysis.yaml` GitHub action
+
 ## 3.0.12 - 2024.01.15
 ### Changed
 * Updated docs to use node 20 & a new sitemap plugin
