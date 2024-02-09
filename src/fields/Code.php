@@ -22,6 +22,8 @@ use nystudio107\codefield\gql\types\generators\CodeDataGenerator;
 use nystudio107\codefield\models\CodeData;
 use nystudio107\codefield\validators\JsonValidator;
 use yii\db\Schema;
+use function is_array;
+use function is_string;
 
 /**
  * @author    nystudio107
@@ -118,9 +120,29 @@ class Code extends Field implements PreviewableFieldInterface
     /**
      * @inheritdoc
      */
+    public function __construct(array $config = [])
+    {
+        // Unset any deprecated properties
+        foreach (self::DEPRECATED_PROPERTIES as $deprecatedProperty) {
+            unset($config[$deprecatedProperty]);
+        }
+        parent::__construct($config);
+    }
+
+    /**
+     * @inheritdoc
+     */
     public static function dbType(): array|string|null
     {
         return Schema::TYPE_TEXT;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function icon(): string
+    {
+        return 'code';
     }
 
     /**
@@ -133,18 +155,6 @@ class Code extends Field implements PreviewableFieldInterface
 
     // Public Methods
     // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
-    public function __construct(array $config = [])
-    {
-        // Unset any deprecated properties
-        foreach(self::DEPRECATED_PROPERTIES as $deprecatedProperty) {
-            unset($config[$deprecatedProperty]);
-        }
-        parent::__construct($config);
-    }
 
     /**
      * @inheritdoc
@@ -162,13 +172,13 @@ class Code extends Field implements PreviewableFieldInterface
         // Handle incoming values potentially being JSON or an array
         if (!empty($value)) {
             // Handle JSON-encoded values coming in
-            if (\is_string($value)) {
+            if (is_string($value)) {
                 $jsonValue = Json::decodeIfJson($value);
                 // If this is still a string (meaning it's not valid JSON), treat it as the value
-                if (\is_string($jsonValue)) {
+                if (is_string($jsonValue)) {
                     $config['value'] = $jsonValue;
                 }
-                if (\is_array($jsonValue)) {
+                if (is_array($jsonValue)) {
                     // Check to make sure the array returned is an encoded `CodeData` config, with exactly
                     // the same expected key/value pairs
                     if (!array_diff_key($config, $jsonValue) && !array_diff_key($jsonValue, $config)) {
@@ -182,7 +192,7 @@ class Code extends Field implements PreviewableFieldInterface
                     }
                 }
             }
-            if (\is_array($value)) {
+            if (is_array($value)) {
                 $config = array_merge($config, array_filter($value));
             }
         }
