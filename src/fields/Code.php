@@ -40,7 +40,7 @@ class Code extends Field implements PreviewableFieldInterface
      * via __construct() that we should remove to avoid throwing an exception
      */
     protected const DEPRECATED_PROPERTIES = [
-        'columnType'
+        'columnType',
     ];
 
     // Public Properties

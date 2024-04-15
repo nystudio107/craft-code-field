@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.0.0 - 2024.04.15
+### Added
+* Stable release for Craft CMS 5
+
 ## 5.0.0-beta.3 - 2024.02.09
 ### Added
 * Added a custom Field icon

@@ -23,8 +23,11 @@ export default defineConfig({
     },
     algolia: {
       appId: '74MFI8NU6J',
-      apiKey: '99c5714e228ccbcda7903f5f6e419a19',
-      indexName: 'nystudio107-code-field'
+      apiKey: 'ed2e079bdbaa44b6b82eaad5a09db0e1',
+      indexName: 'nystudio107-code-field',
+      searchParameters: {
+        facetFilters: ["version:v5"],
+      },
     },
     lastUpdatedText: 'Last Updated',
     sidebar: [],
