@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.0.1 - 2025.05.17
+### Fixed
+* Field editor form no longer breaks when changing entry type with same named code field ([#16](https://github.com/nystudio107/craft-code-field/issues/16))
+
 ## 5.0.0 - 2024.04.15
 ### Added
 * Stable release for Craft CMS 5
