@@ -149,7 +149,7 @@ So putting it together, if your Code Field field handle is `someCode`, this woul
 
 ![Frontend Read Only](./resources/screenshots/code-field-frontend-read-only.png)
 
-If you want Twig & Craft API autocompletes to work on the frontend, you'll need to enable the [`allowFrontendAccess`](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) setting in `craft-code-editor`, but this isn't necessary if the code is just for display purposes.
+If you want Twig & Craft API autocompletes to work on the frontend, you’ll need to enable the [`allowFrontendAccess`](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) setting in `craft-code-editor`, but this isn’t necessary if the code is just for display purposes.
 
 ### Rendering Twig Code Output
 
