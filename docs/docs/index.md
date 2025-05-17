@@ -4,7 +4,7 @@ sidebar: false
 
 description: Documentation for the Code Field plugin.  The Code Field plugin provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete
 ---
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=develop-v3) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=develop-v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/develop-v3) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=develop-v3)](https://scrutinizer-ci.com/code-intelligence)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/quality-score.png?b=v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=v3) [![Code Coverage](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/coverage.png?b=v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/?branch=v3) [![Build Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/build.png?b=v3)](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/build-status/v3) [![Code Intelligence Status](https://scrutinizer-ci.com/g/nystudio107/craft-code-field/badges/code-intelligence.svg?b=v3)](https://scrutinizer-ci.com/code-intelligence)
 
 # Code Field plugin for Craft CMS
 
@@ -14,7 +14,7 @@ Provides a Code Field that has a full-featured code editor with syntax highlight
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later or Craft CMS 4.0.0 or later.
+This plugin requires Craft CMS 3.0.0 or later
 
 ## Installation
 
@@ -149,7 +149,7 @@ So putting it together, if your Code Field field handle is `someCode`, this woul
 
 ![Frontend Read Only](./resources/screenshots/code-field-frontend-read-only.png)
 
-If you want Twig & Craft API autocompletes to work on the frontend, you'll need to enable the [`allowFrontendAccess`](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) setting in `craft-code-editor`, but this isn't necessary if the code is just for display purposes.
+If you want Twig & Craft API autocompletes to work on the frontend, you’ll need to enable the [`allowFrontendAccess`](https://github.com/nystudio107/craft-code-editor#in-frontend-templates) setting in `craft-code-editor`, but this isn’t necessary if the code is just for display purposes.
 
 ### Rendering Twig Code Output
 

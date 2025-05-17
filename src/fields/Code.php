@@ -291,7 +291,7 @@ class Code extends Field implements PreviewableFieldInterface
             if ($this->availableLanguages[0] === '*') {
                 $displayLanguages = $decomposedLanguages;
             }
-            $displayLanguages = array_map(static function ($k, $v) {
+            $displayLanguages = array_map(static function($k, $v) {
                 return ['value' => $k, 'label' => $v];
             }, array_keys($displayLanguages), array_values($displayLanguages));
         }
