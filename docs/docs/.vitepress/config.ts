@@ -23,8 +23,11 @@ export default defineConfig({
     },
     algolia: {
       appId: '74MFI8NU6J',
-      apiKey: '99c5714e228ccbcda7903f5f6e419a19',
-      indexName: 'nystudio107-code-field'
+      apiKey: 'ed2e079bdbaa44b6b82eaad5a09db0e1',
+      indexName: 'nystudio107-code-field',
+      searchParameters: {
+        facetFilters: ["version:v3"],
+      },
     },
     lastUpdatedText: 'Last Updated',
     sidebar: [],
@@ -35,9 +38,9 @@ export default defineConfig({
       {text: 'Issues', link: 'https://github.com/nystudio107/craft-code-field/issues'},
       {
         text: 'v4', items: [
-          {text: 'v5', link: 'https://nystudio107.com/docs/codefield/'},
+          {text: 'v5', link: 'https://nystudio107.com/docs/code-field/'},
           {text: 'v4', link: '/'},
-          {text: 'v3', link: 'https://nystudio107.com/docs/codefield/v3/'},
+          {text: 'v3', link: 'https://nystudio107.com/docs/code-field/v3/'},
         ],
       },
     ]

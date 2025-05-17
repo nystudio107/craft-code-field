@@ -10,7 +10,6 @@
 
 namespace nystudio107\codefield\validators;
 
-
 use Craft;
 use craft\helpers\Json;
 use yii\validators\Validator;

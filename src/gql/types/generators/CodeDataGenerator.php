@@ -52,12 +52,12 @@ class CodeDataGenerator implements GeneratorInterface
             ?: GqlEntityRegistry::createEntity($typeName, new CodeDataType([
                 'name' => $typeName,
                 'description' => 'This entity has all the CodeData properties',
-                'fields' => function () use ($codeDataFields) {
+                'fields' => function() use ($codeDataFields) {
                     return $codeDataFields;
                 },
             ]));
 
-        TypeLoader::registerType($typeName, function () use ($codeDataType) {
+        TypeLoader::registerType($typeName, function() use ($codeDataType) {
             return $codeDataType;
         });
 
