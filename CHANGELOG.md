@@ -2,7 +2,10 @@
 
 All notable changes to this project will be documented in this file
 
-## 3.0.13 - UNRELEASED
+## 3.0.13 - 2025.05.17
+### Fixed
+* Field editor form no longer breaks when changing entry type with same named code field ([#16](https://github.com/nystudio107/craft-code-field/issues/16))
+
 ### Added
 * Add `phpstan` and `ecs` code linting
 * Add `code-analysis.yaml` GitHub action
