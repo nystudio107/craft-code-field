@@ -13,6 +13,7 @@ namespace nystudio107\codefield\fields;
 use Craft;
 use craft\base\ElementInterface;
 use craft\base\Field;
+use craft\base\MergeableFieldInterface;
 use craft\base\PreviewableFieldInterface;
 use craft\helpers\Html;
 use craft\helpers\Json;
@@ -30,7 +31,7 @@ use function is_string;
  * @package   CodeField
  * @since     4.0.0
  */
-class Code extends Field implements PreviewableFieldInterface
+class Code extends Field implements PreviewableFieldInterface, MergeableFieldInterface
 {
     // Constants
     // =========================================================================
