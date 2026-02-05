@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## 5.0.2 - UNRELEASED
+### Changed
+* Code Field now requires `craftcms/cms` `^5.3.0` going forward, because `MergeableFieldInterface` was introduced in that version of Craft CMS ([#17](https://github.com/nystudio107/craft-code-field/issues/17))
+* Add `MergeableFieldInterface` to the `Code` field type so it can be merged ([#17](https://github.com/nystudio107/craft-code-field/issues/17))
+
 ## 5.0.1 - 2025.05.17
 ### Fixed
 * Field editor form no longer breaks when changing entry type with same named code field ([#16](https://github.com/nystudio107/craft-code-field/issues/16))
