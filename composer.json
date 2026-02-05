@@ -2,7 +2,7 @@
   "name": "nystudio107/craft-code-field",
   "description": "Provides a Code Field that has a full-featured code editor with syntax highlighting & autocomplete",
   "type": "craft-plugin",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "keywords": [
     "craft",
     "cms",
@@ -23,8 +23,8 @@
   ],
   "require": {
     "php": "^8.2",
-    "craftcms/cms": "^5.0.0",
-    "nystudio107/craft-code-editor": "^1.0.23"
+    "craftcms/cms": "^5.3.0",
+    "nystudio107/craft-code-editor": "^1.0.29"
   },
   "require-dev": {
     "craftcms/ecs": "dev-main",
